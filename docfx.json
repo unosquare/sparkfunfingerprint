@@ -1,0 +1,40 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "src/Unosquare.WaveShare.FingerprintModule/**/*.cs" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "template": [
+      "best-practices/templates/default"
+    ],
+    "content": [
+      {
+        "files": [ "**/*.yml" ],
+        "cwd": "obj/api",
+        "dest": "api"
+      },
+      {
+        "files": [ "*.md", "toc.yml" ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [ "best-practices/resources/**", "logos/wsfp-logo-256.png"]
+      }
+    ],
+    "globalMetadata": {
+      "_appTitle": "WaveShare Fingerprint Reader Interfacing Library for .NET",
+      "_enableSearch": true,
+      "_appLogoPath": "best-practices/resources/images/logo.png",
+      "_docLogo":  "logos/wsfp-logo-256.png"
+    },
+    "dest": "_site"
+  }
+}
