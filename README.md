@@ -1,5 +1,8 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/61tiduyk2eo8g7r9/branch/master?svg=true)](https://ci.appveyor.com/project/geoperez/sparkfunfingerprint/branch/master)
+[![Analytics](https://ga-beacon.appspot.com/UA-8535255-2/unosquare/wsfingerprint/)](https://github.com/igrigorik/ga-beacon)
+
 # <img src="https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-logo-32.png"></img> SparkFun Fingerprint Reader (GT-521Fxx)
-Interfacing Library for .NET 
+Interfacing Library for .NET 4.5.
 
 * Wiki: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide
 * Reference Manual: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf
