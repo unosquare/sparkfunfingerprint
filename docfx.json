@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": [ "src/Unosquare.WaveShare.FingerprintModule/**/*.cs" ],
+          "files": [ "src/Unosquare.Sparkfun.FingerprintScanner/**/*.cs" ],
           "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
@@ -26,14 +26,14 @@
     ],
     "resource": [
       {
-        "files": [ "best-practices/resources/**", "logos/wsfp-logo-256.png"]
+        "files": [ "best-practices/resources/**", "logos/sffp-logo-256.png"]
       }
     ],
     "globalMetadata": {
-      "_appTitle": "WaveShare Fingerprint Reader Interfacing Library for .NET",
+      "_appTitle": "Sparkfun Fingerprint Reader Interfacing Library for .NET",
       "_enableSearch": true,
       "_appLogoPath": "best-practices/resources/images/logo.png",
-      "_docLogo":  "logos/wsfp-logo-256.png"
+      "_docLogo":  "logos/sffp-logo-256.png"
     },
     "dest": "_site"
   }

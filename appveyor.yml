@@ -40,7 +40,7 @@ after_build:
             git config --global user.email $env:op_build_user_email
             git config --global user.name $env:op_build_user
 
-            git clone https://github.com/unosquare/wsfingerprint.git -b gh-pages origin_site -q
+            git clone https://github.com/unosquare/sparkfunfingerprint.git -b gh-pages origin_site -q
             git clone -b documentation https://github.com/unosquare/best-practices.git -q
             docfx docfx.json --logLevel Error
             Copy-Item origin_site/.git _site -recurse
