@@ -1,4 +1,4 @@
-# <img src="https://github.com/unosquare/sparkfunfingerprint/tree/master/logos/sffp-logo-32.png"></img> SparkFun Fingerprint Reader (GT-521Fxx)
+# <img src="https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-logo-32.png"></img> SparkFun Fingerprint Reader (GT-521Fxx)
 Interfacing Library for .NET 
 
 * Wiki: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide
@@ -6,7 +6,7 @@ Interfacing Library for .NET
 * Data sheet: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521FX2_datasheet_V1.1__003_.pdf
 * Product Page: https://www.sparkfun.com/products/14585
 
-<img src="https://github.com/unosquare/sparkfunfingerprint/tree/master/logos/sffp-image.jpg">
+<img src="https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-image.jpg">
 
 ## Specifications
 
