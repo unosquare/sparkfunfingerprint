@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> SparkFun Fingerprint Reader (GT-521Fxx) | Sparkfun Fingerprint Reader Interfacing Library for .NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content=" SparkFun Fingerprint Reader (GT-521Fxx) | Sparkfun Fingerprint Reader Interfacing Library for .NET ">
+    <meta name="generator" content="docfx 2.36.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="logo" src="best-practices/resources/images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p><a href="https://ci.appveyor.com/project/geoperez/sparkfunfingerprint/branch/master"><img src="https://ci.appveyor.com/api/projects/status/61tiduyk2eo8g7r9/branch/master?svg=true" alt="Build status"></a>
+<a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-8535255-2/unosquare/wsfingerprint/" alt="Analytics"></a></p>
+<h1 id="img-srchttpsgithubcomunosquaresparkfunfingerprintrawmasterlogossffp-logo-32pngimg-sparkfun-fingerprint-reader-gt-521fxx"><img src="https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-logo-32.png"> SparkFun Fingerprint Reader (GT-521Fxx)</h1>
+<p>Interfacing Library for .NET 4.5.</p>
+<ul>
+<li>Wiki: <a href="https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide">https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide</a></li>
+<li>Reference Manual: <a href="https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf">https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf</a></li>
+<li>Data sheet: <a href="https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521FX2_datasheet_V1.1__003_.pdf">https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521FX2_datasheet_V1.1__003_.pdf</a></li>
+<li>Product Page: <a href="https://www.sparkfun.com/products/14585">https://www.sparkfun.com/products/14585</a></li>
+</ul>
+<p><img src="https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-image.jpg"></p>
+<h2 id="specifications">Specifications</h2>
+<table class="tabSty-1" width="600">
+<tbody>
+<tr>
+<th><font size="3">Technical Specs</font></th>
+<th><font size="3">GT-521F32 / GT-521F52</font></th>
+</tr>
+<tr>
+<td><font size="3">CPU</font></td>
+<td><font size="3">ARM Cortex M3 Cortex</font></td>
+</tr>
+<tr>
+<td><font size="3">Sensor</font></td>
+<td><font size="3">optical</font></td>
+</tr>
+<tr>
+<td><font size="3">Window</font></td>
+<td><font size="3">16.9mm x 12.9mm</font></td>
+</tr>
+<tr>
+<td><font size="3">Effective Area of the Sensor</font></td>
+<td><font size="3">14mm x 12.5mm</font></td>
+</tr>
+<tr>
+<td><font size="3">Image Size</font></td>
+<td><font size="3">258x202 px</font></td>
+</tr>
+<tr>
+<td><font size="3">Resolution</font></td>
+<td><font size="3">450 dpi</font></td>
+</tr>
+<tr>
+<td><font size="3">Max # of Fingerprints</font></td>
+<td><font size="3">200 / 3000</font></td>
+</tr>
+<tr>
+<td><font size="3">Matching Mode</font></td>
+<td><font size="3">1:1, 1:N</font></td>
+</tr>
+<tr>
+<td><font size="3">Size of Template</font></td>
+<td><font size="3">496 Bytes(template) + 2 Bytes (checksum)</font></td>
+</tr>
+<tr>
+<td><font size="3">Serial Communication</font></td>
+<td><font size="3">UART (Default: 9600 baud) and USB v2.0 (Full Speed)</font></td>
+</tr>
+<tr>
+<td><font size="3">False Acceptance Rate (FAR)</font></td>
+<td><font size="3">&lt; 0.001%</font></td>
+</tr>
+<tr>
+<td><font size="3">False Rejection Rate (FRR)</font></td>
+<td><font size="3">&lt; 0.01%</font></td>
+</tr>
+<tr>
+<td><font size="3">Enrollment Time</font></td>
+<td><font size="3">&lt; 3 sec (3 fingerprints)</font></td>
+</tr>
+<tr>
+<td><font size="3">Identification Time</font></td>
+<td><font size="3">&lt; 1.5</font></td>
+</tr>
+<tr>
+<td><font size="3">Operating Voltage</font></td>
+<td><font size="3">3.3V ~ 6Vdc</font></td>
+</tr>
+<tr>
+<td><font size="3">Operating Current</font></td>
+<td><font size="3">&lt; 130mA</font></td>
+</tr>
+<tr>
+<td><font size="3">Touch Operating Voltage</font></td>
+<td><font size="3">3.3Vdc</font></td>
+</tr>
+<tr>
+<td><font size="3">Touch Operating Current</font></td>
+<td><font size="3">&lt; 3mA</font></td>
+</tr>
+<tr>
+<td><font size="3">Touch Standby Current</font></td>
+<td><font size="3">&lt; &mu;5</font></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="doc" align="center">
+              <span class="small mobile-hide">
+                <img id="logo" class="doc-logo" src="logos/sffp-logo-256.png" alt="">
+              </span>
+            </div>
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li class="top-sep">
+                    <a href="https://github.com/unosquare/sparkfunfingerprint/blob/master/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2017-2018 <a href="https://www.unosquare.com">Unosquare</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
