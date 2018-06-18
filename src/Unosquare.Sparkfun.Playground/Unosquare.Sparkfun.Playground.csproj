@@ -4,6 +4,9 @@
     <TargetFramework>net452</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Unosquare.Swan.Lite" Version="0.32.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Unosquare.Sparkfun.FingerprintScanner\Unosquare.Sparkfun.FingerprintScanner.csproj" />
   </ItemGroup>
 </Project>

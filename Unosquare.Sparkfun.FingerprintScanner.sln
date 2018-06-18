@@ -3,9 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.FingerprintScanner", "Unosquare.Sparkfun.FingerprintScanner\Unosquare.Sparkfun.FingerprintScanner.csproj", "{EE290DDE-55B8-467E-93BF-5C473A7BF652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.FingerprintScanner", "src\Unosquare.Sparkfun.FingerprintScanner\Unosquare.Sparkfun.FingerprintScanner.csproj", "{EE290DDE-55B8-467E-93BF-5C473A7BF652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unosquare.Sparkfun.Playground", "Unosquare.Sparkfun.Playground\Unosquare.Sparkfun.Playground.csproj", "{A6F75794-633A-4BEC-B468-23CCE0C411EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.Playground", "src\Unosquare.Sparkfun.Playground\Unosquare.Sparkfun.Playground.csproj", "{A6F75794-633A-4BEC-B468-23CCE0C411EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7638602-6B6E-4384-8717-B89024EB76C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F77D073-631C-42C1-9299-BAE5B83E3F45}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+		StyleCop.Analyzers.ruleset = StyleCop.Analyzers.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logos", "logos", "{5D09002E-B80D-4292-8FBA-2DEE3A9FD682}"
+	ProjectSection(SolutionItems) = preProject
+		logos\sffp-image.jpg = logos\sffp-image.jpg
+		logos\sffp-logo-256.png = logos\sffp-logo-256.png
+		logos\sffp-logo-32.png = logos\sffp-logo-32.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +42,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE290DDE-55B8-467E-93BF-5C473A7BF652} = {A7638602-6B6E-4384-8717-B89024EB76C0}
+		{A6F75794-633A-4BEC-B468-23CCE0C411EE} = {A7638602-6B6E-4384-8717-B89024EB76C0}
+		{5D09002E-B80D-4292-8FBA-2DEE3A9FD682} = {0F77D073-631C-42C1-9299-BAE5B83E3F45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FB98E8D-6F2D-4AE8-A2B0-8AA4C24F9F77}
