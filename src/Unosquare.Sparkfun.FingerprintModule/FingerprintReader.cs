@@ -6,7 +6,6 @@
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using Unosquare.Swan;
 
     public class FingerprintReader : IDisposable
     {
@@ -476,7 +475,6 @@
                     await Task.Delay(10);
                 }
 
-                $"Read: {String.Join(" ", data.Select(d => d.ToString("X2")))}".Info();
                 return data.ToArray();
             }
             catch (Exception ex)

@@ -11,6 +11,5 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
-    <PackageReference Include="Unosquare.Swan.Lite" Version="0.32.0" />
   </ItemGroup>
 </Project>
