@@ -7,6 +7,6 @@
     <PackageReference Include="Unosquare.Swan.Lite" Version="0.32.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Unosquare.Sparkfun.FingerprintScanner\Unosquare.Sparkfun.FingerprintScanner.csproj" />
+    <ProjectReference Include="..\Unosquare.Sparkfun.FingerprintModule\Unosquare.Sparkfun.FingerprintModule.csproj" />
   </ItemGroup>
 </Project>

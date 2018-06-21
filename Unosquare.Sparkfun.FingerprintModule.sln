@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.FingerprintScanner", "src\Unosquare.Sparkfun.FingerprintScanner\Unosquare.Sparkfun.FingerprintScanner.csproj", "{EE290DDE-55B8-467E-93BF-5C473A7BF652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.FingerprintModule", "src\Unosquare.Sparkfun.FingerprintModule\Unosquare.Sparkfun.FingerprintModule.csproj", "{EE290DDE-55B8-467E-93BF-5C473A7BF652}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unosquare.Sparkfun.Playground", "src\Unosquare.Sparkfun.Playground\Unosquare.Sparkfun.Playground.csproj", "{A6F75794-633A-4BEC-B468-23CCE0C411EE}"
 EndProject

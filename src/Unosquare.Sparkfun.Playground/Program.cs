@@ -5,7 +5,7 @@ namespace Unosquare.Sparkfun.Playground
     using System.IO.Ports;
     using System.Linq;
     using System.Threading;
-    using FingerprintScanner;
+    using FingerprintModule;
     using Swan;
 
     class Program
@@ -42,8 +42,29 @@ namespace Unosquare.Sparkfun.Playground
                 var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-
                 reader.Open("COM4").Wait();
+
+                $"Serial Number: {reader.SerialNumber}".Info();
+                $"Firmware Version: {reader.FirmwareVersion}".Info();
+
+                while (true)
+                {
+                    "Press 'M' for Match 1-N...".Info();
+                    var key = Console.ReadKey();
+                    if (key.Key != ConsoleKey.M)
+                        break;
+
+                    "Place finger in sensor".Info();
+                    var response = reader.MatchOneToN().GetAwaiter().GetResult();
+                    if (response.IsSuccessful)
+                    {
+                        $"UserId: {response.UserId}".Info();
+                    }
+                    else
+                    {
+                        $"Error: {response.ErrorCode}".Error();
+                    }
+                }
 
                 //while (true)
                 //{
@@ -73,9 +94,7 @@ namespace Unosquare.Sparkfun.Playground
                 //    else
                 //        break;
                 //}
-
-                Console.ReadLine();
-
+                
                 "Closing port...".Info();
                 reader.Dispose();
                 Console.Clear();

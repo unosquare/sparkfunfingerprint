@@ -1,4 +1,4 @@
-﻿namespace Unosquare.Sparkfun.FingerprintScanner
+﻿namespace Unosquare.Sparkfun.FingerprintModule
 {
     using System;
 
@@ -53,7 +53,7 @@
         Close = 0x02,
 
         /// <summary>
-        /// Check if the connected USD device is valid
+        /// Check if the connected USB device is valid
         /// </summary>
         UsbInternalCheck = 0x03,
 
@@ -300,6 +300,16 @@
         FingerNotPressed = 0x1012,
 
         /// <summary>
+        /// Invalid check sum. Possible data corruption.
+        /// </summary>
+        InvalidCheckSum = 0xFFFD,
+
+        /// <summary>
+        /// Duplicate fingerprint while enrollment or setting template
+        /// </summary>
+        DuplicateFingerprint = 0xFFFE,
+
+        /// <summary>
         /// No error
         /// </summary>
         NoError = 0xFFFF,
@@ -322,7 +332,7 @@
     }
 
     /// <summary>
-    /// Finger action
+    /// Finger actions
     /// </summary>
     public enum FingerAction
     {
