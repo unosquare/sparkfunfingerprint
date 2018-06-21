@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "vGaTcMPkDzBB0mjCFZ6XHg=="
+          "hash": "IprUdCzknMQEnWwNDxcjUw=="
         }
       },
       "is_incremental": false,
@@ -69,156 +69,12 @@
       "version": ""
     },
     {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.CommandCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.CommandCode.html",
-          "hash": "SnuDfgyJF3L6ToeEFc5YjQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.ErrorCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.ErrorCode.html",
-          "hash": "p8tnubdv1jF7if2D2cSW4g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.FingerAction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.FingerAction.html",
-          "hash": "kzkBiz1CQrOSYgXbJGFhwQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.FingerprintReader.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.FingerprintReader.html",
-          "hash": "M0XGssdR7H+sGZ/o5F+qNg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.FingerprintReaderModel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.FingerprintReaderModel.html",
-          "hash": "mNUKL5uGFvUSK6ev9wXLmA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.LedStatus.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.LedStatus.html",
-          "hash": "zd8d/qUvrey/JzkygtjlNg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.MatchOneToNResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.MatchOneToNResponse.html",
-          "hash": "ezU8Kx82vxDswFpOwJnU8w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.ResponseCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.ResponseCode.html",
-          "hash": "AvNsGwiTl51d9CjUAtVP7A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.ResponsePacket.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.ResponsePacket.html",
-          "hash": "HeTXuqZL1BW3YMuw9eCxhw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.UserData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.UserData.html",
-          "hash": "QPwUiacrDtdS36cPBFvKXw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintScanner.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Unosquare.Sparkfun.FingerprintScanner.html",
-          "hash": "NdAfWaMpn0sggF618ChNbg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "obj/api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "cRjzeMBMs1RDLH/rfo7y4A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "Nxj0t7y25Kc61KOFtpMoAA=="
+          "hash": "AxHNiX1Y5aLrAYhyFKJUsA=="
         }
       },
       "is_incremental": false,
@@ -232,22 +88,18 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
