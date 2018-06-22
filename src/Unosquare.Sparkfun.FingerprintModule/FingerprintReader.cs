@@ -108,15 +108,11 @@
 
         #region Commands
 
-        private Task<InitializationResponse> OpenDeviceAsync()
-        {
-            return GetResponseAsync<InitializationResponse>(CommandCode.Open, 1);
-        }
+        private Task<InitializationResponse> OpenDeviceAsync() => 
+            GetResponseAsync<InitializationResponse>(Command.Create(CommandCode.Open, 1));
 
-        private Task<BasicResponse> CloseDeviceAsync()
-        {
-            return GetResponseAsync<BasicResponse>(CommandCode.Close);
-        }
+        private Task<BasicResponse> CloseDeviceAsync() => 
+            GetResponseAsync<BasicResponse>(Command.Create(CommandCode.Close));
 
         public Task<BasicResponse> SetLetStatusAsync(LedStatus status)
         {
@@ -126,19 +122,15 @@
                 return TurnLedOffAsync();
         }
 
-        public Task<BasicResponse> TurnLedOnAsync()
-        {
-            return GetResponseAsync<BasicResponse>(CommandCode.CmosLed, 1);
-        }
-
-        public Task<BasicResponse> TurnLedOffAsync()
-        {
-            return GetResponseAsync<BasicResponse>(CommandCode.CmosLed);
-        }
-
+        public Task<BasicResponse> TurnLedOnAsync() => 
+            GetResponseAsync<BasicResponse>(Command.Create(CommandCode.CmosLed, 1));
+        
+        public Task<BasicResponse> TurnLedOffAsync() => 
+            GetResponseAsync<BasicResponse>(Command.Create(CommandCode.CmosLed));
+        
         private async Task<BasicResponse> SetBaudrateAsync(int baudrate)
         {
-            var response = await GetResponseAsync<BasicResponse>(CommandCode.ChangeBaudRate, baudrate);
+            var response = await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudrate));
 
             // It is possible that we don't have a response when changing baudrate 
             // because we are still listening with the previous config. 
@@ -153,20 +145,14 @@
             return response;
         }
 
-        public Task<FastSearchingResponse> FastDeviceSearching()
-        {
-            return GetResponseAsync<FastSearchingResponse>(CommandCode.UsbInternalCheck);
-        }
-
-        public Task<CountEnrolledFingerprintResponse> CountEnrolledFingerprintAsync()
-        {
-            return GetResponseAsync<CountEnrolledFingerprintResponse>(CommandCode.GetEnrollCount);
-        }
-
-        public Task<CheckEnrollmentResponse> CheckEnrollmentStatusAsync(int userId)
-        {
-            return GetResponseAsync<CheckEnrollmentResponse>(CommandCode.CheckEnrolled, userId);
-        }
+        public Task<FastSearchingResponse> FastDeviceSearching() => 
+            GetResponseAsync<FastSearchingResponse>(Command.Create(CommandCode.UsbInternalCheck));
+        
+        public Task<CountEnrolledFingerprintResponse> CountEnrolledFingerprintAsync() => 
+            GetResponseAsync<CountEnrolledFingerprintResponse>(Command.Create(CommandCode.GetEnrollCount));
+        
+        public Task<CheckEnrollmentResponse> CheckEnrollmentStatusAsync(int userId) =>
+            GetResponseAsync<CheckEnrollmentResponse>(Command.Create(CommandCode.CheckEnrolled, userId));
 
         public async Task<EnrollmentResponse> EnrollUserAsync(int iteration, int userId)
         {
@@ -179,15 +165,15 @@
             if (iteration == 1)
             {
                 // Start enrollment
-                var startResult = await GetResponseAsync<BasicResponse>(CommandCode.EnrollStart, userId);
+                var startResult = await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.EnrollStart, userId));
                 if (!startResult.IsSuccessful)
                     return ResponseBase.GetUnsuccessfulResponse<EnrollmentResponse>(startResult.ErrorCode);
             }
 
-            return await EnrollAsync(iteration);
+            return await EnrollAsync(iteration, userId);
         }
 
-        private async Task<EnrollmentResponse> EnrollAsync(int iteration)
+        private async Task<EnrollmentResponse> EnrollAsync(int iteration, int userId)
         {
             var enrollmentFingerActionTimeOut = TimeSpan.FromSeconds(10);
 
@@ -199,7 +185,7 @@
                                        iteration == 2 ? CommandCode.Enroll2 :
                                                         CommandCode.Enroll3;
 
-            return await GetResponseAsync<EnrollmentResponse>(cmd, 0, EnrollTimeout);
+            return await GetResponseAsync<EnrollmentResponse>(Command.Create(cmd, userId), EnrollTimeout);
         }
 
         public Task<bool> WaitFingerActionAsync(FingerAction action) => WaitFingerActionAsync(action, FingerActionTimeout);
@@ -224,22 +210,18 @@
             }
         }
 
-        public Task<CheckFingerPressingResponse> CheckFingerPressingStatusAsync()
-        {
-            return GetResponseAsync<CheckFingerPressingResponse>(CommandCode.IsPressFinger);
-        }
+        public Task<CheckFingerPressingResponse> CheckFingerPressingStatusAsync() => 
+            GetResponseAsync<CheckFingerPressingResponse>(Command.Create(CommandCode.IsPressFinger));
 
-        public Task<BasicResponse> DeleteAllUsersAsync()
-        {
-            return GetResponseAsync<BasicResponse>(CommandCode.DeleteAll);
-        }
+        public Task<BasicResponse> DeleteAllUsersAsync() =>
+            GetResponseAsync<BasicResponse>(Command.Create(CommandCode.DeleteAll));
 
         public Task<BasicResponse> DeleteUserAsync(int userId)
         {
             if (userId < 0 || userId > FingerprintCapacity)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
 
-            return GetResponseAsync<BasicResponse>(CommandCode.DeleteID, userId);
+            return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.DeleteID, userId));
         }
 
         public async Task<BasicResponse> MatchOneToOneAsync(int userId)
@@ -251,12 +233,11 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<BasicResponse>(CommandCode.Verify, userId);
+            return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.Verify, userId));
         }
 
         public async Task<BasicResponse> MatchOneToOneAsync(int userId, byte[] template)
         {
-            // TODO: Implement data packet commands
             if (userId < 0 || userId > FingerprintCapacity)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
 
@@ -264,7 +245,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<BasicResponse>(CommandCode.VerifyTemplate, userId);
+            return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.VerifyTemplate, userId, template));
         }
 
         public async Task<MatchOneToNResponse> MatchOneToN()
@@ -273,27 +254,25 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<MatchOneToNResponse>(CommandCode.Identify);
+            return await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.Identify));
         }
 
         public async Task<MatchOneToNResponse> MatchOneToN(byte[] template)
         {
-            // TODO: Implement data packet commands
             var captureResult = await CaptureFingerprintPatternAsync<MatchOneToNResponse>();
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<MatchOneToNResponse>(CommandCode.IdentifyTemplate);
+            return await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate,0,template));
         }
 
         public async Task<MatchOneToNResponse> MatchOneToN2(byte[] template)
         {
-            // TODO: Implement data packet commands
             var captureResult = await CaptureFingerprintPatternAsync<MatchOneToNResponse>();
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<MatchOneToNResponse>(CommandCode.IdentifyTemplate2, 500);
+            return await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate2, 500,template));
         }
         
         public async Task<TemplateResponse> MakeTemplateAsync()
@@ -302,7 +281,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<TemplateResponse>(CommandCode.MakeTemplate);
+            return await GetResponseAsync<TemplateResponse>(Command.Create(CommandCode.MakeTemplate));
         }
 
         public async Task<GetFingerprintImageResponse> GetImageAsync()
@@ -311,7 +290,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetFingerprintImageResponse>(CommandCode.GetImage);
+            return await GetResponseAsync<GetFingerprintImageResponse>(Command.Create(CommandCode.GetImage));
         }
 
         public async Task<GetRawImageResponse> GetRawImageAsync()
@@ -320,7 +299,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetRawImageResponse>(CommandCode.GetRawImage);
+            return await GetResponseAsync<GetRawImageResponse>(Command.Create(CommandCode.GetRawImage));
         }
 
         private Task<T> CaptureFingerprintPatternAsync<T>()
@@ -341,32 +320,29 @@
             return Activator.CreateInstance(typeof(T), captureResult.Payload) as T;
         }
 
-        private Task<BasicResponse> CaptureFingerprintAsync()
-        {
-            return GetResponseAsync<BasicResponse>(CommandCode.CaptureFinger);
-        }
+        private Task<BasicResponse> CaptureFingerprintAsync() => 
+            GetResponseAsync<BasicResponse>(Command.Create(CommandCode.CaptureFinger));
 
         public Task<TemplateResponse> GetTemplateAsync(int userId)
         {
             if (userId < 0 || userId > FingerprintCapacity)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
 
-            return GetResponseAsync<TemplateResponse>(CommandCode.GetTemplate, userId);
+            return GetResponseAsync<TemplateResponse>(Command.Create(CommandCode.GetTemplate, userId));
         }
 
         public Task<BasicResponse> SetTemplateAsync(int userId, byte[] template)
         {
-            // TODO: Implement data packet commands
             if (userId < 0 || userId > FingerprintCapacity)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
 
-            return GetResponseAsync<BasicResponse>(CommandCode.SetTemplate, userId);
+            return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.SetTemplate, userId,template));
         }
 
         public Task<BasicResponse> EnterStandByMode()
         {
             // TODO: Implement to wake up
-            return GetResponseAsync<BasicResponse>(CommandCode.EnterStandbyMode);
+            return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.EnterStandbyMode));
         }
 
         public Task<BasicResponse> SetSecurityLevelAsync(int level)
@@ -374,53 +350,51 @@
             if (level < 1 || level > 5)
                 throw new ArgumentOutOfRangeException($"{nameof(level)} must be a number between 1 and 5.");
 
-            return GetResponseAsync<BasicResponse>(CommandCode.SetSecurityLevel, level);
+            return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.SetSecurityLevel, level));
         }
 
-        public Task<GetSecurityLevelResponse> GetSecurityLevelAsync()
-        {
-            return GetResponseAsync<GetSecurityLevelResponse>(CommandCode.GetSecurityLevel);
-        }
+        public Task<GetSecurityLevelResponse> GetSecurityLevelAsync() => 
+            GetResponseAsync<GetSecurityLevelResponse>(Command.Create(CommandCode.GetSecurityLevel));
 
         #endregion
 
         #region Write-Read
 
-        private Task<T> GetResponseAsync<T>(CommandCode command, int parameter = 0)
+        private Task<T> GetResponseAsync<T>(Command command)
+            where T : ResponseBase => GetResponseAsync<T>(command, DefaultTimeout);
+
+        private async Task<T> GetResponseAsync<T>(Command command, TimeSpan responseTimeout, CancellationToken ct = default(CancellationToken))
             where T : ResponseBase
         {
-            return GetResponseAsync<T>(command, parameter, DefaultTimeout);
-        }
-
-        private async Task<T> GetResponseAsync<T>(CommandCode command, int parameter, TimeSpan responseTimeout, CancellationToken ct = default(CancellationToken))
-            where T : ResponseBase
-        {
-            var header = new byte[] { 0x55, 0xAA, 0x01, 0x00 };
-            var cmd = BitConverter.GetBytes((UInt16)command);
-            var param = BitConverter.GetBytes(parameter);
-
-            var crc = BitConverter.GetBytes(
-                        Convert.ToUInt16(
-                                header.Sum(d => Convert.ToUInt32(d)) +
-                                cmd.Sum(d => Convert.ToUInt32(d)) +
-                                param.Sum(d => Convert.ToUInt32(d))));
-
-            if (!BitConverter.IsLittleEndian)
+            var expectedResponseLength = PacketBase.BasePacketLenght;
+            if (ResponseBase.ResponseDataLength.ContainsKey(command.CommandCode))
             {
-                Array.Reverse(cmd);
-                Array.Reverse(param);
-                Array.Reverse(crc);
+                expectedResponseLength += 6 + ResponseBase.ResponseDataLength[command.CommandCode];
+
+                // Special cases
+                if ((command.CommandCode == CommandCode.Open && command.Parameter == 0) ||
+                    (command.CommandCode == CommandCode.Enroll3 && command.Parameter != -1))
+                    expectedResponseLength = PacketBase.BasePacketLenght;
             }
 
-            var payload = header.Concat(param).Concat(cmd).Concat(crc).ToArray();
-            
-            await WriteAsync(payload, ct);
-
-            var response = await ReadAsync(DefaultTimeout, ct);
+            await WriteAsync(command.Payload, ct);
+            var response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
             if (response == null || response.Length == 0)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
 
-            return Activator.CreateInstance(typeof(T), response) as T;
+            var responsePkt = Activator.CreateInstance(typeof(T), response) as T;
+
+            if (command.HasDataPacket && responsePkt.IsSuccessful)
+            {
+                await WriteAsync(command.DataPacket.Payload, ct);
+                response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
+                if (response == null || response.Length == 0)
+                    return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
+
+                responsePkt = Activator.CreateInstance(typeof(T), response) as T;
+            }
+
+            return responsePkt;
         }
 
         private async Task WriteAsync(byte[] payload, CancellationToken ct = default(CancellationToken))
@@ -446,7 +420,7 @@
             }
         }
 
-        private async Task<byte[]> ReadAsync(TimeSpan timeout, CancellationToken ct = default(CancellationToken))
+        private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct = default(CancellationToken))
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(Open)} method before attempting communication");
@@ -460,7 +434,7 @@
                 var readed = new byte[1024];
                 var startTime = DateTime.Now;
 
-                while (data.Count < ResponseBase.BaseResponseLenght || _serialPort.BytesToRead > 0)
+                while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
                 {
                     if (_serialPort.BytesToRead > 0)
                     {
@@ -507,12 +481,8 @@
             }
         }
 
-        // This code added to correctly implement the disposable pattern.
-        public void Dispose()
-        {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-            Dispose(true);
-        }
+        public void Dispose() => Dispose(true);
+
         #endregion
     }
 }

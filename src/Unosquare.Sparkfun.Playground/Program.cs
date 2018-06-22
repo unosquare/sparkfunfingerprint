@@ -16,7 +16,7 @@ namespace Unosquare.Sparkfun.Playground
         {
             // Module Control Items
             {ConsoleKey.C, "Count enrolled users"},
-            {ConsoleKey.M, "Math 1:N"},
+            {ConsoleKey.M, "Match 1:N"},
             {ConsoleKey.S, "Enter standby mode"},
         };
 
@@ -45,8 +45,8 @@ namespace Unosquare.Sparkfun.Playground
 
                 while (true)
                 {
-                    Console.Clear();
-                    var option = "Select an option".ReadPrompt(Options, "Quit");
+                    //Console.Clear();
+                    var option = "Select an option".ReadPrompt(Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
                         var countResponse = reader.CountEnrolledFingerprintAsync().Result;
@@ -69,7 +69,7 @@ namespace Unosquare.Sparkfun.Playground
                         else
                             $"Error: {standbyResponse.ErrorCode}".Error();
                     }
-                    else
+                    else if (option.Key == ConsoleKey.Escape)
                         break;
                 }
 

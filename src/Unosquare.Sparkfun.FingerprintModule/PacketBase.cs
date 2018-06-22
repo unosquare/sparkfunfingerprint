@@ -2,7 +2,9 @@
 {
     public abstract class PacketBase : MessageBase
     {
-        public int Paremeter { get; protected set; }
+        public const int BasePacketLenght = 12;
+
+        public int Parameter { get; protected set; }
 
         public bool HasDataPacket => DataPacket != null;
 

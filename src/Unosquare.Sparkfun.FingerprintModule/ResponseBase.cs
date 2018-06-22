@@ -6,25 +6,31 @@
     public abstract class ResponseBase
         : PacketBase
     {
-        public const int BaseResponseLenght = 12;
+        internal static readonly Dictionary<CommandCode, int> ResponseDataLength = new Dictionary<CommandCode, int>
+        {
+            { CommandCode.Open, 24 },
+            { CommandCode.Enroll3, 498 },
+            { CommandCode.MakeTemplate, 498 },
+            { CommandCode.GetImage, 52116 },
+            { CommandCode.GetRawImage, 19200},
+            { CommandCode.GetTemplate, 498 },
+        };
 
         protected ResponseBase(byte[] payload)
         {
             Payload = payload;
             Parameter = payload.LittleEndianArrayToInt(4);
             Response = (ResponseCode)payload.LittleEndianArrayToUInt16(8);
-            IsCrcValid = payload.ValidateChecksum(0, BaseResponseLenght - 1);
+            IsCrcValid = payload.ValidateChecksum(0, BasePacketLenght - 1);
 
-            if (payload.Length > BaseResponseLenght)
+            if (payload.Length > BasePacketLenght)
             {
-                var datapacketPayload = new byte[payload.Length - BaseResponseLenght];
-                Array.Copy(payload, BaseResponseLenght, datapacketPayload, 0, datapacketPayload.Length);
+                var datapacketPayload = new byte[payload.Length - BasePacketLenght];
+                Array.Copy(payload, BasePacketLenght, datapacketPayload, 0, datapacketPayload.Length);
 
                 DataPacket = new ResponseDataPacket(datapacketPayload);
             }
         }
-
-        protected int Parameter { get; private set; }
 
         protected ResponseCode Response { get; private set; }
 

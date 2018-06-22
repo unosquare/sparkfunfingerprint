@@ -1,6 +1,7 @@
 ﻿namespace Unosquare.Sparkfun.FingerprintModule
 {
     using System;
+    using System.Collections.Generic;
 
     internal class DataPacket 
         : MessageBase
@@ -29,14 +30,12 @@
 
         private void CreatePayload()
         {
-            var payload = new byte[6 + Data.Length];
-            payload[0] = StartCode1;
-            payload[1] = StartCode2;
-            Array.Copy(DeviceId, 0, payload, 2, DeviceId.Length);
-            Array.Copy(Data, 0, payload, 2 + DeviceId.Length, Data.Length);
-            var crc = payload.ComputeChecksum(0, payload.Length - 3).ToLittleEndianArray();
-            Array.Copy(crc, 0, payload, payload.Length - 2, crc.Length);
-            Payload = payload;
+            var payload = new List<byte>() { StartCode1, StartCode2 };
+            payload.AddRange(DeviceId);
+            payload.AddRange(Data);
+            var crc = payload.ComputeChecksum().ToLittleEndianArray();
+            payload.AddRange(crc);
+            Payload = payload.ToArray();
         }
     }
 
