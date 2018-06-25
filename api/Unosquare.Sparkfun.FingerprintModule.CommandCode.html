@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum CommandCode
+   | Sparkfun Fingerprint Reader Interfacing Library for .NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum CommandCode
+   | Sparkfun Fingerprint Reader Interfacing Library for .NET ">
+    <meta name="generator" content="docfx 2.36.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="logo" src="../best-practices/resources/images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Unosquare.Sparkfun.FingerprintModule.CommandCode">
+  
+  
+  <h1 id="Unosquare_Sparkfun_FingerprintModule_CommandCode" data-uid="Unosquare.Sparkfun.FingerprintModule.CommandCode" class="text-break">Enum CommandCode
+  </h1>
+  <div class="markdown level0 summary"><p>Command codes</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.html">Unosquare.Sparkfun.FingerprintModule</a></h6>
+  <h5 id="Unosquare_Sparkfun_FingerprintModule_CommandCode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum CommandCode : ushort</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_CaptureFinger">CaptureFinger</td>
+        <td><p>Capture a fingerprint image (256 x 256) from the sensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_ChangeBaudRate">ChangeBaudRate</td>
+        <td><p>Change UART baudrate</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_CheckEnrolled">CheckEnrolled</td>
+        <td><p>Check whether a specified ID is already enrolled</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Close">Close</td>
+        <td><p>Termination</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_CmosLed">CmosLed</td>
+        <td><p>Control CMOS led</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_DeleteAll">DeleteAll</td>
+        <td><p>Delete all fingerprints from the device database</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_DeleteID">DeleteID</td>
+        <td><p>Delete a fingerprint with the specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Enroll1">Enroll1</td>
+        <td><p>Make first template for an enrollment</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Enroll2">Enroll2</td>
+        <td><p>Make second template for an enrollment</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Enroll3">Enroll3</td>
+        <td><p>Make third template for and enrollment,
+merge the three templates into one template,
+save marged template to the database</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_EnrollStart">EnrollStart</td>
+        <td><p>Start an enrollment</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_EnterStandbyMode">EnterStandbyMode</td>
+        <td><p>Enter standby mode (Low power mode)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetDatabaseEnd">GetDatabaseEnd</td>
+        <td><p>End devoice database download</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetDatabaseStart">GetDatabaseStart</td>
+        <td><p>Start device database download</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetEnrollCount">GetEnrollCount</td>
+        <td><p>Get enrolled fingerprint count</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetImage">GetImage</td>
+        <td><p>Download the capture fingerprint image (256 x 256)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetRawImage">GetRawImage</td>
+        <td><p>Capture and download a raw fingerprint image (320 x 240)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetSecurityLevel">GetSecurityLevel</td>
+        <td><p>Get security level from a specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_GetTemplate">GetTemplate</td>
+        <td><p>Download the template of the specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Identify">Identify</td>
+        <td><p>1:N Identification on the capture fingerprint image with the device database</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_IdentifyTemplate">IdentifyTemplate</td>
+        <td><p>1:N Identification of a fingerprint template with the device database</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_IdentifyTemplate2">IdentifyTemplate2</td>
+        <td><p>Identify of the capture fingerprint image with the specified template</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_IsPressFinger">IsPressFinger</td>
+        <td><p>Check if a finger is palced on the sensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_MakeTemplate">MakeTemplate</td>
+        <td><p>Make a template for transmission</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Open">Open</td>
+        <td><p>Initialization</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_SetSecurityLevel">SetSecurityLevel</td>
+        <td><p>Set security level for a specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_SetTemplate">SetTemplate</td>
+        <td><p>Upload a template for the specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_UsbInternalCheck">UsbInternalCheck</td>
+        <td><p>Check if the connected USB device is valid</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_Verify">Verify</td>
+        <td><p>1:1 Verification on the capture fingerprint image with the specified ID</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Unosquare_Sparkfun_FingerprintModule_CommandCode_VerifyTemplate">VerifyTemplate</td>
+        <td><p>1:1 Verification of a fingerprint template with the specified ID</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://unolabs.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="doc" align="center">
+              <span class="small mobile-hide">
+                <img id="logo" class="doc-logo" src="../logos/sffp-logo-256.png" alt="">
+              </span>
+            </div>
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2017-2018 <a href="https://www.unosquare.com">Unosquare</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

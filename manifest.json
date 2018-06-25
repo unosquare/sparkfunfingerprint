@@ -69,12 +69,312 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.BasicResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.BasicResponse.html",
+          "hash": "xTdIC4ExqlHVOkEKa4hTMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.CheckEnrollmentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CheckEnrollmentResponse.html",
+          "hash": "RZv/RCzJQ/quyPjVtqCGwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.CheckFingerPressingResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CheckFingerPressingResponse.html",
+          "hash": "CzmdlxqMmCvu3TMvyxy6Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.Command.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Command.html",
+          "hash": "+2WvppGraIJi9dolQsoqnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.CommandCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CommandCode.html",
+          "hash": "mqTXpnwlD+vKpiBIkGg3EQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.CountEnrolledFingerprintResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CountEnrolledFingerprintResponse.html",
+          "hash": "9YcgolJtm6A8KloLPHmbWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.EnrollmentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.EnrollmentResponse.html",
+          "hash": "FlUbFErVxbZ/uEk2fjjq9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.ErrorCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ErrorCode.html",
+          "hash": "9ogAfzBCkENj4GTKcYVzWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.FastSearchingResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FastSearchingResponse.html",
+          "hash": "6iN3mVKSeg8eW1/WmaEjFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.FingerAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerAction.html",
+          "hash": "JLrFyDD2VdU/RKGdZJf1lQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html",
+          "hash": "ai4+Syxm3DWcYEIMwH8NmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.FingerprintReaderModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerprintReaderModel.html",
+          "hash": "g61saRwOjbY9F+y5iV488Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.GetFingerprintImageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetFingerprintImageResponse.html",
+          "hash": "AO1F23/TlXTdivDzq7gTQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.GetRawImageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetRawImageResponse.html",
+          "hash": "KgbYeDQuJ+giZFAnwUdczQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.GetSecurityLevelResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetSecurityLevelResponse.html",
+          "hash": "gXIn8wpWfg9aRLmW4INenw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.InitializationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.InitializationResponse.html",
+          "hash": "pcTVEKIcIk3S87ojnLRUoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.LedStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.LedStatus.html",
+          "hash": "zLIXsGwQ3EDAgSIWwPS1qA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html",
+          "hash": "BfoavkRe3uUtkKrMZaib9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.MessageBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.MessageBase.html",
+          "hash": "fFcu/DYqeMS5hXH8pGV8Eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.PacketBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.PacketBase.html",
+          "hash": "Szpcvn3I86rKCWw/uR1RUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.ResponseBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ResponseBase.html",
+          "hash": "/YER5INF1MSHirKBULG8Mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.ResponseCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ResponseCode.html",
+          "hash": "E6VPEfHfN24Mf3uvbwMGtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.TemplateResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html",
+          "hash": "ZEApOw9QjMQ6ZNptUhOJSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.html",
+          "hash": "LPoJno/h5G4dBrhVwxMHtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "d9ZAQcUM6M8SkT7rllmrsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "AxHNiX1Y5aLrAYhyFKJUsA=="
+          "hash": "EWQ1mbjPYr0TqRyKgxb++A=="
         }
       },
       "is_incremental": false,
@@ -88,13 +388,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "TocDocumentProcessor": {

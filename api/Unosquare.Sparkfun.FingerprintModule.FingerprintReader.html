@@ -1,0 +1,1549 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FingerprintReader
+   | Sparkfun Fingerprint Reader Interfacing Library for .NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FingerprintReader
+   | Sparkfun Fingerprint Reader Interfacing Library for .NET ">
+    <meta name="generator" content="docfx 2.36.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="logo" src="../best-practices/resources/images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader">
+  
+  
+  <h1 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader" class="text-break">Class FingerprintReader
+  </h1>
+  <div class="markdown level0 summary"><p>The main class representing the Sparkfun fingerprint reader module GT521Fxx.
+Reference: <a href="https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf">https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf</a>
+WIKI: <a href="https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide">https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide</a></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FingerprintReader</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.html">Unosquare.Sparkfun.FingerprintModule</a></h6>
+  <h5 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FingerprintReader : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader__ctor_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.#ctor*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader__ctor_Unosquare_Sparkfun_FingerprintModule_FingerprintReaderModel_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.#ctor(Unosquare.Sparkfun.FingerprintModule.FingerprintReaderModel)">FingerprintReader(FingerprintReaderModel)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html">FingerprintReader</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FingerprintReader(FingerprintReaderModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerprintReaderModel.html">FingerprintReaderModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td><p>The fingerprint reader model.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader__ctor_Unosquare_Sparkfun_FingerprintModule_FingerprintReaderModel__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The model determines the device capacity.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FingerprintCapacity_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FingerprintCapacity*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FingerprintCapacity" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FingerprintCapacity">FingerprintCapacity</h4>
+  <div class="markdown level1 summary"><p>Gets the fingerprint capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FingerprintCapacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FirmwareVersion_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FirmwareVersion*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FirmwareVersion" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FirmwareVersion">FirmwareVersion</h4>
+  <div class="markdown level1 summary"><p>Gets the device firmware version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FirmwareVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_IsoAreaMaxSize_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.IsoAreaMaxSize*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_IsoAreaMaxSize" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.IsoAreaMaxSize">IsoAreaMaxSize</h4>
+  <div class="markdown level1 summary"><p>Gets the maximum size of the iso area.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IsoAreaMaxSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SerialNumber_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SerialNumber*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SerialNumber" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SerialNumber">SerialNumber</h4>
+  <div class="markdown level1 summary"><p>Gets the device serial number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SerialNumber { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckEnrollmentStatusAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckEnrollmentStatusAsync_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32)">CheckEnrollmentStatusAsync(Int32)</h4>
+  <div class="markdown level1 summary"><p>Checks the enrollment status asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CheckEnrollmentResponse&gt; CheckEnrollmentStatusAsync(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CheckEnrollmentResponse.html">CheckEnrollmentResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous check enrolled status operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CheckEnrollmentResponse.html">CheckEnrollmentResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckFingerPressingStatusAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckFingerPressingStatusAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync">CheckFingerPressingStatusAsync()</h4>
+  <div class="markdown level1 summary"><p>Checks the finger pressing status asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CheckFingerPressingResponse&gt; CheckFingerPressingStatusAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CheckFingerPressingResponse.html">CheckFingerPressingResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous check finger pressing status operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CheckFingerPressingResponse.html">CheckFingerPressingResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Close_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Close" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Closes the fingerprint device if open.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task Close()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous close operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CountEnrolledFingerprintAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CountEnrolledFingerprintAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync">CountEnrolledFingerprintAsync()</h4>
+  <div class="markdown level1 summary"><p>Counts the enrolled fingerprint asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CountEnrolledFingerprintResponse&gt; CountEnrolledFingerprintAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CountEnrolledFingerprintResponse.html">CountEnrolledFingerprintResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous count enrolled fingerprint operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.CountEnrolledFingerprintResponse.html">CountEnrolledFingerprintResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteAllUsersAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteAllUsersAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync">DeleteAllUsersAsync()</h4>
+  <div class="markdown level1 summary"><p>Deletes all users from device&apos;s database asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; DeleteAllUsersAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous delete all users operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteUserAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteUserAsync_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32)">DeleteUserAsync(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes a specific user asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; DeleteUserAsync(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous delete user operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Dispose_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Dispose*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Dispose" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Dispose_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Dispose*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Dispose_System_Boolean_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Releases unmanaged and - optionally - managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p><code>true</code> to release both managed and unmanaged resources; <code>false</code> to release only unmanaged resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnrollUserAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnrollUserAsync_System_Int32_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32,System.Int32)">EnrollUserAsync(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Enrolls a new user asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;EnrollmentResponse&gt; EnrollUserAsync(int iteration, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">iteration</span></td>
+        <td><p>The iteration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.EnrollmentResponse.html">EnrollmentResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous enroll user operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.EnrollmentResponse.html">EnrollmentResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>iteration
+or
+userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnterStandByMode_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnterStandByMode" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode">EnterStandByMode()</h4>
+  <div class="markdown level1 summary"><p>Sets device to stand by mode (low power mode).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; EnterStandByMode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous enter standby operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching">FastDeviceSearching()</h4>
+  <div class="markdown level1 summary"><p>Fasts device searching asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;FastSearchingResponse&gt; FastDeviceSearching()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FastSearchingResponse.html">FastSearchingResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous set fast device searching goperation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FastSearchingResponse.html">FastSearchingResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The device operates as removable CD drive. If another removable CD drive exists in the system, connection time maybe will be long.
+To prevent this, <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching">FastDeviceSearching()</a> command is used for fast searching of the device.</p>
+</div>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetImageAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetImageAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync">GetImageAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets a fingerprint image asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;GetFingerprintImageResponse&gt; GetImageAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetFingerprintImageResponse.html">GetFingerprintImageResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous get image operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetFingerprintImageResponse.html">GetFingerprintImageResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync">GetRawImageAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets a raw image from the device asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;GetRawImageResponse&gt; GetRawImageAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetRawImageResponse.html">GetRawImageResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous get raw image operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetRawImageResponse.html">GetRawImageResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetSecurityLevelAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetSecurityLevelAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync">GetSecurityLevelAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets the device&apos;s security level asynchronous. 1 is the lowest security level, 5 is the highest security level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;GetSecurityLevelResponse&gt; GetSecurityLevelAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetSecurityLevelResponse.html">GetSecurityLevelResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous get security level operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.GetSecurityLevelResponse.html">GetSecurityLevelResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetTemplateAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetTemplateAsync_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32)">GetTemplateAsync(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets a fingerprint template asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TemplateResponse&gt; GetTemplateAsync(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html">TemplateResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous get template operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html">TemplateResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MakeTemplateAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MakeTemplateAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync">MakeTemplateAsync()</h4>
+  <div class="markdown level1 summary"><p>Makes a fingerprint template asynchronous. This template must be used only for transmission and not for user enrollment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TemplateResponse&gt; MakeTemplateAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html">TemplateResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous make template operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html">TemplateResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN">MatchOneToN()</h4>
+  <div class="markdown level1 summary"><p>Match 1:N asynchronous. Acquires an image from the device and identifies the user id it belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;MatchOneToNResponse&gt; MatchOneToN()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous match one to n operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_System_Byte___" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[])">MatchOneToN(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;MatchOneToNResponse&gt; MatchOneToN(byte[] template)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">template</span></td>
+        <td><p>The fingerprint template.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous match one to n operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_System_Byte___" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[])">MatchOneToN2(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;MatchOneToNResponse&gt; MatchOneToN2(byte[] template)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">template</span></td>
+        <td><p>The special fingerprint template.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous match one to n operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html">MatchOneToNResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_System_Byte____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_System_Byte___">MatchOneToN2(Byte[])</a> uses a special fingerprint template with 2 extra bytes at the beginning of the byte array.</p>
+</div>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32)">MatchOneToOneAsync(Int32)</h4>
+  <div class="markdown level1 summary"><p>Match 1:1 asynchronous. Acquires an image from the device and verify if it matches the supplied user id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; MatchOneToOneAsync(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous match one to one operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_System_Byte___" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Byte[])">MatchOneToOneAsync(Int32, Byte[])</h4>
+  <div class="markdown level1 summary"><p>Match 1:1 asynchronous. Verify if a provided fingerprint template matches the supplied user id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; MatchOneToOneAsync(int userId, byte[] template)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">template</span></td>
+        <td><p>The fingerprint template.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous match one to one operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Open_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Open_System_String_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open(System.String)">Open(String)</h4>
+  <div class="markdown level1 summary"><p>Opens and initialize the fingerprint device at the specified port name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task Open(string portName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">portName</span></td>
+        <td><p>Name of the port.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous open operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Device is already open. Call the close method first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetLetStatusAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetLetStatusAsync_Unosquare_Sparkfun_FingerprintModule_LedStatus_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus)">SetLetStatusAsync(LedStatus)</h4>
+  <div class="markdown level1 summary"><p>Sets the let status asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; SetLetStatusAsync(LedStatus status)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Unosquare.Sparkfun.FingerprintModule.LedStatus.html">LedStatus</a></td>
+        <td><span class="parametername">status</span></td>
+        <td><p>The status.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous set led status operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetSecurityLevelAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetSecurityLevelAsync_System_Int32_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32)">SetSecurityLevelAsync(Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets the device&apos;s security level asynchronous. 1 is the lowest security level, 5 is the highest security level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; SetSecurityLevelAsync(int level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>The security level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous set security level operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>level</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetTemplateAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetTemplateAsync_System_Int32_System_Byte___" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32,System.Byte[])">SetTemplateAsync(Int32, Byte[])</h4>
+  <div class="markdown level1 summary"><p>Sets a fingerprint template asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; SetTemplateAsync(int userId, byte[] template)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">template</span></td>
+        <td><p>The fingerprint template.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous set template operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOffAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOffAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync">TurnLedOffAsync()</h4>
+  <div class="markdown level1 summary"><p>Turns the led off asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; TurnLedOffAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous turn led off operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOnAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOnAsync" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync">TurnLedOnAsync()</h4>
+  <div class="markdown level1 summary"><p>Turns the led on asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BasicResponse&gt; TurnLedOnAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>&gt;</td>
+        <td><p>A task that represents the asynchronous turn led on operation.
+The result of the task contains an instance of <a class="xref" href="Unosquare.Sparkfun.FingerprintModule.BasicResponse.html">BasicResponse</a>. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction)">WaitFingerActionAsync(FingerAction)</h4>
+  <div class="markdown level1 summary"><p>Waits a finger action asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; WaitFingerActionAsync(FingerAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerAction.html">FingerAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The action to wait for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>A task that represents the asynchronous wait finger action operation.
+The result of the task contains a <span class="xref">System.Boolean</span> indicating if the action was performed.
+<code>true</code> if the action was performed; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync*"></a>
+  <h4 id="Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_System_TimeSpan_" data-uid="Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.TimeSpan)">WaitFingerActionAsync(FingerAction, TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Waits a finger action for a specified time period asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; WaitFingerActionAsync(FingerAction action, TimeSpan timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Unosquare.Sparkfun.FingerprintModule.FingerAction.html">FingerAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The action to wait for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>The timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>A task that represents the asynchronous wait finger action operation.
+The result of the task contains a <span class="xref">System.Boolean</span> indicating if the action was performed.
+<code>true</code> if the action was performed; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span class="xref">System.IDisposable</span></div>
+  </div>
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://unolabs.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="doc" align="center">
+              <span class="small mobile-hide">
+                <img id="logo" class="doc-logo" src="../logos/sffp-logo-256.png" alt="">
+              </span>
+            </div>
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2017-2018 <a href="https://www.unosquare.com">Unosquare</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
