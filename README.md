@@ -2,6 +2,9 @@
 [![Analytics](https://ga-beacon.appspot.com/UA-8535255-2/unosquare/wsfingerprint/)](https://github.com/igrigorik/ga-beacon)
 
 # ![Fingerprint](https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-logo-32.png "Unosquare fingerprint") SparkFun Fingerprint Reader (GT-521Fxx)
+
+*:star: Please star this project if you find it useful!*
+
 Interfacing Library for .NET 4.5.
 
 * Wiki: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide
@@ -34,3 +37,27 @@ Interfacing Library for .NET 4.5.
 | Touch Operating Voltage      | 3.3Vdc                                              |
 | Touch Operating Current      | < 3mA                                               |
 | Touch Standby Current        | < μ5                                                |
+
+## Library Features
+* All documented commands are implemented (2018-06-25)
+* Operations are all asynchronous
+* No dependencies
+* Nice sample application included for testing
+* MIT License
+
+## NuGet Installation: [![NuGet version](https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader.svg)](https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader)
+
+```
+PM> Install-Package Unosquare.Sparkfun.FingerprintReader
+```
+
+## Usage
+
+TODO
+
+## Related fingerprint projects
+
+| Project | Description |
+|--------| ---|
+|[wsfingerprint](https://github.com/unosquare/wsfingerprint)|WaveShare Fingerprint Reader - Interfacing Library for .NET |
+|[libfprint-cs](https://github.com/unosquare/libfprint-cs)|The long-awaited C# (.net/mono) wrapper for the great fprint library|
