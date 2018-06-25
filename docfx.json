@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": [ "src/Unosquare.Sparkfun.FingerprintScanner/**/*.cs" ],
+          "files": [ "src/Unosquare.Sparkfun.FingerprintModule/**/*.cs" ],
           "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
