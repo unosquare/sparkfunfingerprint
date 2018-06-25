@@ -3,8 +3,17 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Extension methods.
+    /// </summary>
     internal static class Extensions
     {
+        /// <summary>
+        /// Computes the checksum of the given payload.
+        /// </summary>
+        /// <param name="payload">The payload.</param>
+        /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
+        /// <exception cref="ArgumentException">payload</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload)
         {
             if (payload == null || payload.Count == 0)
@@ -13,6 +22,14 @@
             return payload.ComputeChecksum(0, payload.Count - 1);
         }
 
+        /// <summary>
+        /// Computes the checksum of the given payload.
+        /// </summary>
+        /// <param name="payload">The payload.</param>
+        /// <param name="startIndex">The start index.</param>
+        /// <param name="endIndex">The end index.</param>
+        /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
+        /// <exception cref="ArgumentException">payload</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload, int startIndex, int endIndex)
         {
             if (payload == null || payload.Count < endIndex + 1)
@@ -27,6 +44,14 @@
             return checksum;
         }
 
+        /// <summary>
+        /// Validates the checksum for a byte array.
+        /// </summary>
+        /// <param name="payload">The byte array.</param>
+        /// <returns>A <see cref="bool"/> indicating if the CRC is valid. 
+        /// <c>true</c> if the CRC is valid; otherwise, <c>false</c>.
+        /// </returns>
+        /// <exception cref="ArgumentException">payload</exception>
         internal static bool ValidateChecksum(this byte[] payload)
         {
             if (payload == null || payload.Length == 0)
@@ -35,6 +60,16 @@
             return payload.ValidateChecksum(0, payload.Length - 1);
         }
 
+        /// <summary>
+        /// Validates the checksum for a byte array.
+        /// </summary>
+        /// <param name="payload">The byte array.</param>
+        /// <param name="startIndex">The start index.</param>
+        /// <param name="endIndex">The end index.</param>
+        /// <returns>A <see cref="bool"/> indicating if the CRC is valid. 
+        /// <c>true</c> if the CRC is valid; otherwise, <c>false</c>.
+        /// </returns>
+        /// <exception cref="ArgumentException">payload</exception>
         internal static bool ValidateChecksum(this byte[] payload, int startIndex, int endIndex)
         {
             if (payload == null || payload.Length < endIndex + 1)
@@ -46,6 +81,11 @@
             return checksum == currChecksum;
         }
 
+        /// <summary>
+        /// Converts an <see cref="UInt16"/> value to a little endian byte array.
+        /// </summary>
+        /// <param name="value">The <see cref="UInt16"/> value.</param>
+        /// <returns>A little endian byte array with the converted value.</returns>
         internal static byte[] ToLittleEndianArray(this ushort value)
         {
             var result = BitConverter.GetBytes(value);
@@ -55,6 +95,12 @@
             return result;
         }
 
+        /// <summary>
+        /// Converts a little endian array to an <see cref="UInt16"/>.
+        /// </summary>
+        /// <param name="data">The byte array.</param>
+        /// <param name="startIndex">The start index.</param>
+        /// <returns>An <see cref="UInt16"/> with the converted value.</returns>
         internal static ushort LittleEndianArrayToUInt16(this byte[] data, int startIndex)
         {
             var result = new byte[2];
@@ -66,6 +112,11 @@
             return BitConverter.ToUInt16(result, 0);
         }
 
+        /// <summary>
+        /// Converts an <see cref="int"/> value to a little endian byte array.
+        /// </summary>
+        /// <param name="value">The <see cref="int"/> value.</param>
+        /// <returns>A little endian byte array with the converted value.</returns>
         internal static byte[] ToLittleEndianArray(this int value)
         {
             var result = BitConverter.GetBytes(value);
@@ -75,6 +126,12 @@
             return result;
         }
 
+        /// <summary>
+        /// Converts a little endian array to an <see cref="int"/>.
+        /// </summary>
+        /// <param name="data">The byte array.</param>
+        /// <param name="startIndex">The start index.</param>
+        /// <returns>An <see cref="int"/> with the converted value.</returns>
         internal static int LittleEndianArrayToInt(this byte[] data, int startIndex)
         {
             var result = new byte[4];

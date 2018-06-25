@@ -20,8 +20,6 @@ namespace Unosquare.Sparkfun.Playground
             {ConsoleKey.S, "Enter standby mode"},
         };
 
-        private static FingerprintReader reader;
-
         static void Main(string[] args)
         {
             try
@@ -30,7 +28,7 @@ namespace Unosquare.Sparkfun.Playground
 
                 foreach (var p in SerialPort.GetPortNames())
                 {
-                    $"Puerto: {p}".Info();
+                    $"Port: {p}".Info();
                 }
 
                 "Creating port...".Info();
@@ -70,7 +68,9 @@ namespace Unosquare.Sparkfun.Playground
                             $"Error: {standbyResponse.ErrorCode}".Error();
                     }
                     else if (option.Key == ConsoleKey.Escape)
+                    {
                         break;
+                    }
                 }
 
                 "Closing port...".Info();
@@ -80,6 +80,7 @@ namespace Unosquare.Sparkfun.Playground
             catch (Exception ex)
             {
                 ex.Message.Error();
+                Console.ReadLine();
             }
         }
     }
