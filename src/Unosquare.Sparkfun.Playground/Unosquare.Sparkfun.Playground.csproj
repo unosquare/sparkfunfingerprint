@@ -2,9 +2,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net452</TargetFramework>
+    <CodeAnalysisRuleSet>..\..\StyleCop.Analyzers.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Unosquare.Swan.Lite" Version="0.32.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
+    <PackageReference Include="Unosquare.Swan.Lite" Version="0.32.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unosquare.Sparkfun.FingerprintModule\Unosquare.Sparkfun.FingerprintModule.csproj" />

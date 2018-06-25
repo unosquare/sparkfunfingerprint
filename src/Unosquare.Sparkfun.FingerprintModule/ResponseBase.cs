@@ -23,16 +23,14 @@
             Response = (ResponseCode)payload.LittleEndianArrayToUInt16(8);
             IsCrcValid = payload.ValidateChecksum(0, BasePacketLenght - 1);
 
-            if (payload.Length > BasePacketLenght)
-            {
-                var datapacketPayload = new byte[payload.Length - BasePacketLenght];
-                Array.Copy(payload, BasePacketLenght, datapacketPayload, 0, datapacketPayload.Length);
+            if (payload.Length <= BasePacketLenght) return;
+            var datapacketPayload = new byte[payload.Length - BasePacketLenght];
+            Array.Copy(payload, BasePacketLenght, datapacketPayload, 0, datapacketPayload.Length);
 
-                DataPacket = new ResponseDataPacket(datapacketPayload);
-            }
+            DataPacket = new ResponseDataPacket(datapacketPayload);
         }
 
-        protected ResponseCode Response { get; private set; }
+        protected ResponseCode Response { get; }
 
         public virtual bool IsSuccessful => IsCrcValid && Response == ResponseCode.Ack && (!HasDataPacket || ResponseDataPacket.IsCrcValid);
 
@@ -53,7 +51,7 @@
             }
         }
 
-        protected bool IsCrcValid { get; private set; }
+        protected bool IsCrcValid { get; }
 
         internal ResponseDataPacket ResponseDataPacket => (ResponseDataPacket)DataPacket;
 
@@ -64,7 +62,7 @@
             var payload = new List<byte>() { BaseStartCode1, BaseStartCode2 };
             payload.AddRange(BaseDeviceId);
             payload.AddRange(((int)errorCode).ToLittleEndianArray());
-            payload.AddRange(((UInt16)ResponseCode.Nack).ToLittleEndianArray());
+            payload.AddRange(((ushort)ResponseCode.Nack).ToLittleEndianArray());
             var crc = payload.ComputeChecksum().ToLittleEndianArray();
             payload.AddRange(crc);
             

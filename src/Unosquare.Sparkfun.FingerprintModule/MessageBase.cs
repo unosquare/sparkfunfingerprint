@@ -4,9 +4,9 @@
     {
         internal const byte BaseStartCode1 = 0x55;
         internal const byte BaseStartCode2 = 0xAA;
-        internal static readonly byte[] BaseDeviceId = new byte[] { 01, 00 };
+        internal static readonly byte[] BaseDeviceId = { 01, 00 };
 
-        public MessageBase()
+        protected MessageBase()
         {
             DeviceId = BaseDeviceId;
         }

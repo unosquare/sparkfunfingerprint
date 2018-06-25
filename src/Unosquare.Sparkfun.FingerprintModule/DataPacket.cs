@@ -9,8 +9,7 @@
         internal const byte DataPacketStartCode1 = 0x5A;
         internal const byte DataPacketStartCode2 = 0xA5;
 
-        public DataPacket() 
-            : base()
+        public DataPacket()
         {
             StartCode1 = DataPacketStartCode1;
             StartCode2 = DataPacketStartCode2;
@@ -54,6 +53,6 @@
             IsCrcValid = payload.ValidateChecksum();
         }
         
-        public bool IsCrcValid { get; private set; }
+        public bool IsCrcValid { get; }
     }
 }

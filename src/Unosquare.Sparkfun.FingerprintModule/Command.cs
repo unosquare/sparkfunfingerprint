@@ -27,7 +27,7 @@
             DataPacket = new CommandDataPacket(data);
         }
 
-        public CommandCode CommandCode { get; private set; }
+        public CommandCode CommandCode { get; }
         
         internal static Command Create(CommandCode commandCode) =>
             Create(commandCode, 0);
@@ -40,10 +40,9 @@
             if (data == null)
                 throw new ArgumentNullException(nameof(data));
 
-            if (CommandDataLength.ContainsKey(commandCode))
+            if (CommandDataLength.ContainsKey(commandCode) && data.Length != CommandDataLength[commandCode])
             {
-                if (data.Length != CommandDataLength[commandCode])
-                    throw new ArgumentOutOfRangeException(nameof(data), "Current data length does not match expected data length for the command.");
+                throw new ArgumentOutOfRangeException(nameof(data), "Current data length does not match expected data length for the command.");
             }
 
             return new Command(commandCode, parameter, data);
@@ -54,7 +53,7 @@
             var payload = new List<byte>() { BaseStartCode1, BaseStartCode2 };
             payload.AddRange(BaseDeviceId);
             payload.AddRange(Parameter.ToLittleEndianArray());
-            payload.AddRange(((UInt16)CommandCode).ToLittleEndianArray());
+            payload.AddRange(((ushort)CommandCode).ToLittleEndianArray());
             var crc = payload.ComputeChecksum().ToLittleEndianArray();
             payload.AddRange(crc);
             Payload = payload.ToArray();

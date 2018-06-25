@@ -18,19 +18,18 @@
         public InitializationResponse(byte[] payload) 
             : base(payload)
         {
-            if (HasDataPacket)
-            {
-                FirmwareVersion = $"{ResponseDataPacket.Data[3].ToString("X2")}" +
-                                  $"{ResponseDataPacket.Data[2].ToString("X2")}" +
-                                  $"{ResponseDataPacket.Data[1].ToString("X2")}" + 
-                                  $"{ResponseDataPacket.Data[0].ToString("X2")}";
-                IsoAreaMaxSize = ResponseDataPacket.Data.LittleEndianArrayToInt(4);
-                RawSerialNumber = new byte[16];
-                Array.Copy(ResponseDataPacket.Data, 8, RawSerialNumber, 0, RawSerialNumber.Length);
+            if (!HasDataPacket) return;
 
-                SerialNumber = string.Join(String.Empty, RawSerialNumber.Take(8).Select(x => x.ToString("X2"))) + "-" +
-                               string.Join(String.Empty, RawSerialNumber.Skip(8).Select(x => x.ToString("X2")));
-            }
+            FirmwareVersion = $"{ResponseDataPacket.Data[3]:X2}" +
+                              $"{ResponseDataPacket.Data[2]:X2}" +
+                              $"{ResponseDataPacket.Data[1]:X2}" + 
+                              $"{ResponseDataPacket.Data[0]:X2}";
+            IsoAreaMaxSize = ResponseDataPacket.Data.LittleEndianArrayToInt(4);
+            RawSerialNumber = new byte[16];
+            Array.Copy(ResponseDataPacket.Data, 8, RawSerialNumber, 0, RawSerialNumber.Length);
+
+            SerialNumber = string.Join(string.Empty, RawSerialNumber.Take(8).Select(x => x.ToString("X2"))) + "-" +
+                           string.Join(string.Empty, RawSerialNumber.Skip(8).Select(x => x.ToString("X2")));
         }
 
         public string FirmwareVersion { get; } = NoInfo;

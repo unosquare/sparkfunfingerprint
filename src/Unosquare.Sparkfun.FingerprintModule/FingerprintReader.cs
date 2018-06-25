@@ -43,7 +43,7 @@
 
         #region Properties
 
-        public int FingerprintCapacity { get; private set; }
+        public int FingerprintCapacity { get; }
 
         public string FirmwareVersion => _deviceInfo?.FirmwareVersion ?? InitializationResponse.NoInfo;
 
@@ -363,7 +363,7 @@
         private Task<T> GetResponseAsync<T>(Command command)
             where T : ResponseBase => GetResponseAsync<T>(command, DefaultTimeout);
 
-        private async Task<T> GetResponseAsync<T>(Command command, TimeSpan responseTimeout, CancellationToken ct = default(CancellationToken))
+        private async Task<T> GetResponseAsync<T>(Command command, TimeSpan responseTimeout, CancellationToken ct = default)
             where T : ResponseBase
         {
             var expectedResponseLength = PacketBase.BasePacketLenght;
@@ -384,7 +384,7 @@
 
             var responsePkt = Activator.CreateInstance(typeof(T), response) as T;
 
-            if (command.HasDataPacket && responsePkt.IsSuccessful)
+            if (command.HasDataPacket && responsePkt?.IsSuccessful == true)
             {
                 await WriteAsync(command.DataPacket.Payload, ct);
                 response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
@@ -397,12 +397,12 @@
             return responsePkt;
         }
 
-        private async Task WriteAsync(byte[] payload, CancellationToken ct = default(CancellationToken))
+        private async Task WriteAsync(byte[] payload, CancellationToken ct = default)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(Open)} method before attempting communication");
 
-            _serialPortDone.Wait();
+            _serialPortDone.Wait(ct);
             _serialPortDone.Reset();
 
             try
@@ -420,12 +420,12 @@
             }
         }
 
-        private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct = default(CancellationToken))
+        private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct = default)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(Open)} method before attempting communication");
 
-            _serialPortDone.Wait();
+            _serialPortDone.Wait(ct);
             _serialPortDone.Reset();
 
             try
@@ -446,7 +446,7 @@
                     if (DateTime.Now.Subtract(startTime) > timeout)
                         return null;
 
-                    await Task.Delay(10);
+                    await Task.Delay(10, ct);
                 }
 
                 return data.ToArray();
@@ -464,21 +464,19 @@
         #endregion
 
         #region IDisposable Support
-        private bool disposedValue = false; // To detect redundant calls
+        private bool _disposedValue; // To detect redundant calls
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (_disposedValue) return;
+            if (disposing)
             {
-                if (disposing)
-                {
-                    Close().Wait();
-                    _serialPortDone.Dispose();
-                }
-
-                _serialPortDone = null;
-                disposedValue = true;
+                Close().Wait();
+                _serialPortDone.Dispose();
             }
+
+            _serialPortDone = null;
+            _disposedValue = true;
         }
 
         public void Dispose() => Dispose(true);
