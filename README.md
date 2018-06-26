@@ -53,7 +53,14 @@ PM> Install-Package Unosquare.Sparkfun.FingerprintReader
 
 ## Usage
 
-TODO
+```csharp
+using (var reader = new FingerprintReader(FingerprintReaderModel.GT521F52))
+    {
+         await reader.Open("COM4");
+         Console.WriteLine($"Serial Number: {reader.SerialNumber}");
+         Console.WriteLine($"Firmware Version: {reader.FirmwareVersion}");
+    }
+```
 
 ## Related fingerprint projects
 
