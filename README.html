@@ -180,8 +180,13 @@
 <h2 id="nuget-installation-nuget-versionhttpsbadgefuryionuunosquaresparkfunfingerprintreadersvghttpsbadgefuryionuunosquaresparkfunfingerprintreader">NuGet Installation: <a href="https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader"><img src="https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader.svg" alt="NuGet version"></a></h2>
 <pre><code>PM&gt; Install-Package Unosquare.Sparkfun.FingerprintReader
 </code></pre><h2 id="usage">Usage</h2>
-<p>TODO</p>
-<h2 id="related-fingerprint-projects">Related fingerprint projects</h2>
+<pre><code class="lang-csharp">using (var reader = new FingerprintReader(FingerprintReaderModel.GT521F52))
+    {
+         await reader.Open(&quot;COM4&quot;);
+         Console.WriteLine($&quot;Serial Number: {reader.SerialNumber}&quot;);
+         Console.WriteLine($&quot;Firmware Version: {reader.FirmwareVersion}&quot;);
+    }
+</code></pre><h2 id="related-fingerprint-projects">Related fingerprint projects</h2>
 <table>
 <thead>
 <tr>
