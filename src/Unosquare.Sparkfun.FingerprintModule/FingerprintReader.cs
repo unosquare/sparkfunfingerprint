@@ -656,24 +656,33 @@
                     expectedResponseLength = PacketBase.BasePacketLenght;
             }
 
-            await WriteAsync(command.Payload, ct);
-            var response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
-            if (response == null || response.Length == 0)
-                return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
-
-            var responsePkt = Activator.CreateInstance(typeof(T), response) as T;
-
-            if (command.HasDataPacket && responsePkt?.IsSuccessful == true)
+            _serialPortDone.Wait(ct);
+            _serialPortDone.Reset();
+            try
             {
-                await WriteAsync(command.DataPacket.Payload, ct);
-                response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
+                await WriteAsync(command.Payload, ct);
+                var response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
                 if (response == null || response.Length == 0)
                     return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
 
-                responsePkt = Activator.CreateInstance(typeof(T), response) as T;
-            }
+                var responsePkt = Activator.CreateInstance(typeof(T), response) as T;
 
-            return responsePkt;
+                if (command.HasDataPacket && responsePkt?.IsSuccessful == true)
+                {
+                    await WriteAsync(command.DataPacket.Payload, ct);
+                    response = await ReadAsync(expectedResponseLength, DefaultTimeout, ct);
+                    if (response == null || response.Length == 0)
+                        return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
+
+                    responsePkt = Activator.CreateInstance(typeof(T), response) as T;
+                }
+
+                return responsePkt;
+            }
+            finally
+            {
+                _serialPortDone.Set();
+            }
         }
 
         /// <summary>
@@ -687,22 +696,8 @@
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(Open)} method before attempting communication");
 
-            _serialPortDone.Wait(ct);
-            _serialPortDone.Reset();
-
-            try
-            {
-                await _serialPort.BaseStream.WriteAsync(payload, 0, payload.Length, ct);
-                await _serialPort.BaseStream.FlushAsync(ct);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                _serialPortDone.Set();
-            }
+            await _serialPort.BaseStream.WriteAsync(payload, 0, payload.Length, ct);
+            await _serialPort.BaseStream.FlushAsync(ct);
         }
 
         /// <summary>
@@ -717,40 +712,26 @@
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(Open)} method before attempting communication");
 
-            _serialPortDone.Wait(ct);
-            _serialPortDone.Reset();
+            var data = new List<byte>();
+            var readed = new byte[1024];
+            var startTime = DateTime.Now;
 
-            try
+            while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
             {
-                var data = new List<byte>();
-                var readed = new byte[1024];
-                var startTime = DateTime.Now;
-
-                while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
+                if (_serialPort.BytesToRead > 0)
                 {
-                    if (_serialPort.BytesToRead > 0)
-                    {
-                        var bytesRead = await _serialPort.BaseStream.ReadAsync(readed, 0, readed.Length, ct);
-                        if (bytesRead > 0)
-                            data.AddRange(readed.Take(bytesRead));
-                    }
-
-                    if (DateTime.Now.Subtract(startTime) > timeout)
-                        return null;
-
-                    await Task.Delay(10, ct);
+                    var bytesRead = await _serialPort.BaseStream.ReadAsync(readed, 0, readed.Length, ct);
+                    if (bytesRead > 0)
+                        data.AddRange(readed.Take(bytesRead));
                 }
 
-                return data.ToArray();
+                if (DateTime.Now.Subtract(startTime) > timeout)
+                    return null;
+
+                await Task.Delay(10, ct);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                _serialPortDone.Set();
-            }
+
+            return data.ToArray();
         }
 
         #endregion
