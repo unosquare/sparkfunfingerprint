@@ -370,8 +370,8 @@
         /// <summary>
         /// Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
         /// <param name="template">The fingerprint template.</param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
         /// <returns>A task that represents the asynchronous match one to n operation.
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse" />.
         /// </returns>
@@ -643,7 +643,7 @@
         private async Task<T> CaptureFingerprintPatternAsync<T>(TimeSpan fingerActionTimeout, CancellationToken ct)
             where T : ResponseBase
         {
-            var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout);
+            var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout, ct);
             if (!actionPerformed)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.FingerNotPressed);
 
@@ -737,7 +737,7 @@
                             where T : ResponseBase
         {
             await WriteAsync(payload, ct);
-            var response = await ReadAsync(expectedResponseLength, responseTimeout, ct);
+            var response = await ReadAsync(expectedResponseLength, responseTimeout, CancellationToken.None);
             if (response == null || response.Length == 0)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
 

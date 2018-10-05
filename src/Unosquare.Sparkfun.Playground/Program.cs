@@ -4,6 +4,7 @@ namespace Unosquare.Sparkfun.Playground
     using System.Collections.Generic;
     using FingerprintModule;
     using Swan;
+    using System.Threading;
 #if NETCOREAPP2_1
     using RJCP.IO.Ports;
 #else
@@ -50,25 +51,31 @@ namespace Unosquare.Sparkfun.Playground
 
                 while (true)
                 {
-                    //Console.Clear();
                     var option = "Select an option".ReadPrompt(Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
-                        var countResponse = reader.CountEnrolledFingerprintAsync().Result;
+                        var countResponse = reader.CountEnrolledFingerprintAsync().GetAwaiter().GetResult();
                         if (countResponse.IsSuccessful)
                             $"Users enrolled: {countResponse.EnrolledFingerprints}".Info();
                     }
                     else if (option.Key == ConsoleKey.M)
                     {
-                        var matchResponse = reader.MatchOneToN().Result;
-                        if (matchResponse.IsSuccessful)
-                            $"UserId: {matchResponse.UserId}".Info();
-                        else
-                            $"Error: {matchResponse.ErrorCode}".Error();
+                        try
+                        {
+                            var matchResponse = reader.MatchOneToN().GetAwaiter().GetResult();
+                            if (matchResponse.IsSuccessful)
+                                $"UserId: {matchResponse.UserId}".Info();
+                            else
+                                $"Error: {matchResponse.ErrorCode}".Error();
+                        }
+                        catch (OperationCanceledException ex)
+                        {
+                            $"Error: {ex.Message}".Error();
+                        }
                     }
                     else if (option.Key == ConsoleKey.S)
                     {
-                        var standbyResponse = reader.EnterStandByMode().Result;
+                        var standbyResponse = reader.EnterStandByMode().GetAwaiter().GetResult();
                         if (standbyResponse.IsSuccessful)
                             $"Standby Mode".Info();
                         else
