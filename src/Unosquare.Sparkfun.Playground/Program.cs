@@ -34,7 +34,6 @@ namespace Unosquare.Sparkfun.Playground
 #else
                 foreach (var p in SerialPort.GetPortNames())
 #endif
-
                 {
                     $"Port: {p}".Info();
                 }
