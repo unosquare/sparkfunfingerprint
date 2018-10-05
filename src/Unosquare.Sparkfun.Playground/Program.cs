@@ -2,13 +2,16 @@ namespace Unosquare.Sparkfun.Playground
 {
     using System;
     using System.Collections.Generic;
-    using System.IO.Ports;
     using FingerprintModule;
     using Swan;
+#if NETCOREAPP2_1
+    using RJCP.IO.Ports;
+#else
+    using System.IO.Ports;
+#endif
 
-    class Program
+    public class Program
     {
-
         private const int InitialBaudRate = 9600;
         private const int TargetBaudRate = 115200;
 
@@ -25,8 +28,12 @@ namespace Unosquare.Sparkfun.Playground
             try
             {
                 "Getting ports...".Info();
-
+#if NETCOREAPP2_1
+                foreach (var p in SerialPortStream.GetPortNames())
+#else
                 foreach (var p in SerialPort.GetPortNames())
+#endif
+
                 {
                     $"Port: {p}".Info();
                 }
@@ -36,7 +43,7 @@ namespace Unosquare.Sparkfun.Playground
                 var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-                reader.Open("COM4").Wait();
+                reader.OpenAsync("COM4").Wait();
 
                 $"Serial Number: {reader.SerialNumber}".Info();
                 $"Firmware Version: {reader.FirmwareVersion}".Info();
