@@ -600,12 +600,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FingerprintReader
   nameWithType: FingerprintReader.FingerprintReader
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32)
-  name: CheckEnrollmentStatusAsync(Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckEnrollmentStatusAsync_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32)
-  nameWithType: FingerprintReader.CheckEnrollmentStatusAsync(Int32)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32,System.Threading.CancellationToken)
+  name: CheckEnrollmentStatusAsync(Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckEnrollmentStatusAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.CheckEnrollmentStatusAsync(Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync*
   name: CheckEnrollmentStatusAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckEnrollmentStatusAsync_
@@ -613,12 +613,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckEnrollmentStatusAsync
   nameWithType: FingerprintReader.CheckEnrollmentStatusAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync
-  name: CheckFingerPressingStatusAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckFingerPressingStatusAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync()
-  nameWithType: FingerprintReader.CheckFingerPressingStatusAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync(System.Threading.CancellationToken)
+  name: CheckFingerPressingStatusAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckFingerPressingStatusAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.CheckFingerPressingStatusAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync*
   name: CheckFingerPressingStatusAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CheckFingerPressingStatusAsync_
@@ -626,25 +626,25 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CheckFingerPressingStatusAsync
   nameWithType: FingerprintReader.CheckFingerPressingStatusAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close
-  name: Close()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Close
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close()
-  nameWithType: FingerprintReader.Close()
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close*
-  name: Close
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Close_
-  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync(System.Threading.CancellationToken)
+  name: CloseAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CloseAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.CloseAsync(CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync*
+  name: CloseAsync
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CloseAsync_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync
   isSpec: "True"
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Close
-  nameWithType: FingerprintReader.Close
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync
-  name: CountEnrolledFingerprintAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CountEnrolledFingerprintAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync()
-  nameWithType: FingerprintReader.CountEnrolledFingerprintAsync()
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CloseAsync
+  nameWithType: FingerprintReader.CloseAsync
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync(System.Threading.CancellationToken)
+  name: CountEnrolledFingerprintAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CountEnrolledFingerprintAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.CountEnrolledFingerprintAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync*
   name: CountEnrolledFingerprintAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_CountEnrolledFingerprintAsync_
@@ -652,12 +652,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.CountEnrolledFingerprintAsync
   nameWithType: FingerprintReader.CountEnrolledFingerprintAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync
-  name: DeleteAllUsersAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteAllUsersAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync()
-  nameWithType: FingerprintReader.DeleteAllUsersAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync(System.Threading.CancellationToken)
+  name: DeleteAllUsersAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteAllUsersAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.DeleteAllUsersAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync*
   name: DeleteAllUsersAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteAllUsersAsync_
@@ -665,12 +665,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteAllUsersAsync
   nameWithType: FingerprintReader.DeleteAllUsersAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32)
-  name: DeleteUserAsync(Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteUserAsync_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32)
-  nameWithType: FingerprintReader.DeleteUserAsync(Int32)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32,System.Threading.CancellationToken)
+  name: DeleteUserAsync(Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteUserAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.DeleteUserAsync(Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.DeleteUserAsync*
   name: DeleteUserAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_DeleteUserAsync_
@@ -697,12 +697,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Dispose
   nameWithType: FingerprintReader.Dispose
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32,System.Int32)
-  name: EnrollUserAsync(Int32, Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnrollUserAsync_System_Int32_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32,System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32, System.Int32)
-  nameWithType: FingerprintReader.EnrollUserAsync(Int32, Int32)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  name: EnrollUserAsync(Int32, Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnrollUserAsync_System_Int32_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync(System.Int32, System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.EnrollUserAsync(Int32, Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync*
   name: EnrollUserAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnrollUserAsync_
@@ -710,12 +710,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnrollUserAsync
   nameWithType: FingerprintReader.EnrollUserAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode
-  name: EnterStandByMode()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnterStandByMode
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode()
-  nameWithType: FingerprintReader.EnterStandByMode()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode(System.Threading.CancellationToken)
+  name: EnterStandByMode(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnterStandByMode_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.EnterStandByMode(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode*
   name: EnterStandByMode
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_EnterStandByMode_
@@ -723,12 +723,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.EnterStandByMode
   nameWithType: FingerprintReader.EnterStandByMode
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching
-  name: FastDeviceSearching()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching()
-  nameWithType: FingerprintReader.FastDeviceSearching()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching(System.Threading.CancellationToken)
+  name: FastDeviceSearching(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.FastDeviceSearching(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FastDeviceSearching*
   name: FastDeviceSearching
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_FastDeviceSearching_
@@ -762,12 +762,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.FirmwareVersion
   nameWithType: FingerprintReader.FirmwareVersion
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync
-  name: GetImageAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetImageAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync()
-  nameWithType: FingerprintReader.GetImageAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync(System.Threading.CancellationToken)
+  name: GetImageAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetImageAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.GetImageAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync*
   name: GetImageAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetImageAsync_
@@ -775,12 +775,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync
   nameWithType: FingerprintReader.GetImageAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync
-  name: GetRawImageAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync()
-  nameWithType: FingerprintReader.GetRawImageAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync(System.Threading.CancellationToken)
+  name: GetRawImageAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.GetRawImageAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync*
   name: GetRawImageAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync_
@@ -788,12 +788,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync
   nameWithType: FingerprintReader.GetRawImageAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync
-  name: GetSecurityLevelAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetSecurityLevelAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync()
-  nameWithType: FingerprintReader.GetSecurityLevelAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync(System.Threading.CancellationToken)
+  name: GetSecurityLevelAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetSecurityLevelAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.GetSecurityLevelAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync*
   name: GetSecurityLevelAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetSecurityLevelAsync_
@@ -801,12 +801,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetSecurityLevelAsync
   nameWithType: FingerprintReader.GetSecurityLevelAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32)
-  name: GetTemplateAsync(Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetTemplateAsync_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32)
-  nameWithType: FingerprintReader.GetTemplateAsync(Int32)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetTemplateAsync(Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetTemplateAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.GetTemplateAsync(Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetTemplateAsync*
   name: GetTemplateAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetTemplateAsync_
@@ -827,12 +827,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.IsoAreaMaxSize
   nameWithType: FingerprintReader.IsoAreaMaxSize
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync
-  name: MakeTemplateAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MakeTemplateAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync()
-  nameWithType: FingerprintReader.MakeTemplateAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync(System.Threading.CancellationToken)
+  name: MakeTemplateAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MakeTemplateAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MakeTemplateAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync*
   name: MakeTemplateAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MakeTemplateAsync_
@@ -840,21 +840,21 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MakeTemplateAsync
   nameWithType: FingerprintReader.MakeTemplateAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN
-  name: MatchOneToN()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN()
-  nameWithType: FingerprintReader.MatchOneToN()
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[])
-  name: MatchOneToN(Byte[])
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_System_Byte___
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[])
-  name.vb: MatchOneToN(Byte())
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[])
-  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte())
-  nameWithType: FingerprintReader.MatchOneToN(Byte[])
-  nameWithType.vb: FingerprintReader.MatchOneToN(Byte())
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[],System.Threading.CancellationToken)
+  name: MatchOneToN(Byte[], CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[],System.Threading.CancellationToken)
+  name.vb: MatchOneToN(Byte(), CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Byte(), System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MatchOneToN(Byte[], CancellationToken)
+  nameWithType.vb: FingerprintReader.MatchOneToN(Byte(), CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Threading.CancellationToken)
+  name: MatchOneToN(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MatchOneToN(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN*
   name: MatchOneToN
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN_
@@ -862,15 +862,15 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN
   nameWithType: FingerprintReader.MatchOneToN
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[])
-  name: MatchOneToN2(Byte[])
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_System_Byte___
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[])
-  name.vb: MatchOneToN2(Byte())
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[])
-  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte())
-  nameWithType: FingerprintReader.MatchOneToN2(Byte[])
-  nameWithType.vb: FingerprintReader.MatchOneToN2(Byte())
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[],System.Threading.CancellationToken)
+  name: MatchOneToN2(Byte[], CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[],System.Threading.CancellationToken)
+  name.vb: MatchOneToN2(Byte(), CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2(System.Byte(), System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MatchOneToN2(Byte[], CancellationToken)
+  nameWithType.vb: FingerprintReader.MatchOneToN2(Byte(), CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2*
   name: MatchOneToN2
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToN2_
@@ -878,21 +878,21 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToN2
   nameWithType: FingerprintReader.MatchOneToN2
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32)
-  name: MatchOneToOneAsync(Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32)
-  nameWithType: FingerprintReader.MatchOneToOneAsync(Int32)
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Byte[])
-  name: MatchOneToOneAsync(Int32, Byte[])
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_System_Byte___
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Byte[])
-  name.vb: MatchOneToOneAsync(Int32, Byte())
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32, System.Byte[])
-  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32, System.Byte())
-  nameWithType: FingerprintReader.MatchOneToOneAsync(Int32, Byte[])
-  nameWithType.vb: FingerprintReader.MatchOneToOneAsync(Int32, Byte())
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Byte[],System.Threading.CancellationToken)
+  name: MatchOneToOneAsync(Int32, Byte[], CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Byte[],System.Threading.CancellationToken)
+  name.vb: MatchOneToOneAsync(Int32, Byte(), CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32, System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32, System.Byte(), System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MatchOneToOneAsync(Int32, Byte[], CancellationToken)
+  nameWithType.vb: FingerprintReader.MatchOneToOneAsync(Int32, Byte(), CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Threading.CancellationToken)
+  name: MatchOneToOneAsync(Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.MatchOneToOneAsync(Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync*
   name: MatchOneToOneAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MatchOneToOneAsync_
@@ -900,19 +900,19 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync
   nameWithType: FingerprintReader.MatchOneToOneAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open(System.String)
-  name: Open(String)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Open_System_String_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open(System.String)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open(System.String)
-  nameWithType: FingerprintReader.Open(String)
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open*
-  name: Open
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_Open_
-  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String,System.Threading.CancellationToken)
+  name: OpenAsync(String, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_OpenAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.OpenAsync(String, CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync*
+  name: OpenAsync
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_OpenAsync_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync
   isSpec: "True"
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.Open
-  nameWithType: FingerprintReader.Open
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync
+  nameWithType: FingerprintReader.OpenAsync
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SerialNumber
   name: SerialNumber
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SerialNumber
@@ -926,12 +926,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SerialNumber
   nameWithType: FingerprintReader.SerialNumber
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus)
-  name: SetLetStatusAsync(LedStatus)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetLetStatusAsync_Unosquare_Sparkfun_FingerprintModule_LedStatus_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus)
-  nameWithType: FingerprintReader.SetLetStatusAsync(LedStatus)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus,System.Threading.CancellationToken)
+  name: SetLetStatusAsync(LedStatus, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetLetStatusAsync_Unosquare_Sparkfun_FingerprintModule_LedStatus_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync(Unosquare.Sparkfun.FingerprintModule.LedStatus, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.SetLetStatusAsync(LedStatus, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync*
   name: SetLetStatusAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetLetStatusAsync_
@@ -939,12 +939,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetLetStatusAsync
   nameWithType: FingerprintReader.SetLetStatusAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32)
-  name: SetSecurityLevelAsync(Int32)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetSecurityLevelAsync_System_Int32_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32)
-  nameWithType: FingerprintReader.SetSecurityLevelAsync(Int32)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32,System.Threading.CancellationToken)
+  name: SetSecurityLevelAsync(Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetSecurityLevelAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.SetSecurityLevelAsync(Int32, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync*
   name: SetSecurityLevelAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetSecurityLevelAsync_
@@ -952,15 +952,15 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetSecurityLevelAsync
   nameWithType: FingerprintReader.SetSecurityLevelAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32,System.Byte[])
-  name: SetTemplateAsync(Int32, Byte[])
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetTemplateAsync_System_Int32_System_Byte___
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32,System.Byte[])
-  name.vb: SetTemplateAsync(Int32, Byte())
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32, System.Byte[])
-  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32, System.Byte())
-  nameWithType: FingerprintReader.SetTemplateAsync(Int32, Byte[])
-  nameWithType.vb: FingerprintReader.SetTemplateAsync(Int32, Byte())
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32,System.Byte[],System.Threading.CancellationToken)
+  name: SetTemplateAsync(Int32, Byte[], CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetTemplateAsync_System_Int32_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32,System.Byte[],System.Threading.CancellationToken)
+  name.vb: SetTemplateAsync(Int32, Byte(), CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32, System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync(System.Int32, System.Byte(), System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.SetTemplateAsync(Int32, Byte[], CancellationToken)
+  nameWithType.vb: FingerprintReader.SetTemplateAsync(Int32, Byte(), CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync*
   name: SetTemplateAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_SetTemplateAsync_
@@ -968,12 +968,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.SetTemplateAsync
   nameWithType: FingerprintReader.SetTemplateAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync
-  name: TurnLedOffAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOffAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync()
-  nameWithType: FingerprintReader.TurnLedOffAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync(System.Threading.CancellationToken)
+  name: TurnLedOffAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOffAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.TurnLedOffAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync*
   name: TurnLedOffAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOffAsync_
@@ -981,12 +981,12 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOffAsync
   nameWithType: FingerprintReader.TurnLedOffAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync
-  name: TurnLedOnAsync()
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOnAsync
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync()
-  nameWithType: FingerprintReader.TurnLedOnAsync()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync(System.Threading.CancellationToken)
+  name: TurnLedOnAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOnAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync(System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.TurnLedOnAsync(CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync*
   name: TurnLedOnAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_TurnLedOnAsync_
@@ -994,18 +994,18 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.TurnLedOnAsync
   nameWithType: FingerprintReader.TurnLedOnAsync
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction)
-  name: WaitFingerActionAsync(FingerAction)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction)
-  nameWithType: FingerprintReader.WaitFingerActionAsync(FingerAction)
-- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.TimeSpan)
-  name: WaitFingerActionAsync(FingerAction, TimeSpan)
-  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_System_TimeSpan_
-  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.TimeSpan)
-  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction, System.TimeSpan)
-  nameWithType: FingerprintReader.WaitFingerActionAsync(FingerAction, TimeSpan)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.Threading.CancellationToken)
+  name: WaitFingerActionAsync(FingerAction, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.WaitFingerActionAsync(FingerAction, CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.TimeSpan,System.Threading.CancellationToken)
+  name: WaitFingerActionAsync(FingerAction, TimeSpan, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_Unosquare_Sparkfun_FingerprintModule_FingerAction_System_TimeSpan_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction,System.TimeSpan,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync(Unosquare.Sparkfun.FingerprintModule.FingerAction, System.TimeSpan, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.WaitFingerActionAsync(FingerAction, TimeSpan, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.WaitFingerActionAsync*
   name: WaitFingerActionAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_WaitFingerActionAsync_
