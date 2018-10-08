@@ -9,6 +9,7 @@
     using System.IO.Ports;
 #else
     using RJCP.IO.Ports;
+    using Resources;
 #endif
 
     /// <summary>
@@ -48,6 +49,14 @@
         #endregion
 
         #region Constructor
+
+#if !NET452
+        static FingerprintReader()
+        {
+            if (Utils.Runtime.OS != Utils.OperatingSystem.Windows)
+                EmbeddedResources.ExtractAll();
+        }
+#endif
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FingerprintReader"/> class.

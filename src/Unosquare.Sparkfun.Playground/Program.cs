@@ -28,6 +28,8 @@ namespace Unosquare.Sparkfun.Playground
         {
             try
             {
+                var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
+
                 "Getting ports...".Info();
 #if NETCOREAPP2_1
                 foreach (var p in SerialPortStream.GetPortNames())
@@ -39,8 +41,6 @@ namespace Unosquare.Sparkfun.Playground
                 }
 
                 "Creating port...".Info();
-
-                var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
                 reader.OpenAsync("COM4").Wait();

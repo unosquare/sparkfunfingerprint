@@ -1,4 +1,5 @@
-﻿namespace Unosquare.Sparkfun.FingerprintModule.Resources
+﻿#if !NET452
+namespace Unosquare.Sparkfun.FingerprintModule.Resources
 {
     using System;
     using System.Collections.ObjectModel;
@@ -18,15 +19,11 @@
         /// </summary>
         static EmbeddedResources()
         {
-#if !NET452
             EntryAssembly = typeof(EmbeddedResources).GetTypeInfo().Assembly;
             ResourceNames = new ReadOnlyCollection<string>(EntryAssembly.GetManifestResourceNames());
             var uri = new UriBuilder(EntryAssembly.CodeBase);
             var path = Uri.UnescapeDataString(uri.Path);
             EntryAssemblyDirectory = Path.GetDirectoryName(path);
-
-            ExtractAll();
-#endif
         }
 
         /// <summary>
@@ -72,14 +69,13 @@
         public static void ExtractAll()
         {
             var basePath = EntryAssemblyDirectory;
-            var executablePermissions = StringToInteger("0777", IntPtr.Zero, 8);
 
             foreach (var resourceName in ResourceNames)
             {
                 var filename = resourceName
-                    .Substring($"{typeof(EmbeddedResources).Namespace}.".Length)
-                    .Replace(".temp", string.Empty);
-                var targetPath = Path.Combine(basePath, filename);
+                    .Substring($"{typeof(EmbeddedResources).Namespace}.".Length);
+
+                var targetPath = Path.Combine(basePath, filename.Replace(".temp", string.Empty));
                 if (File.Exists(targetPath)) return;
 
                 using (var stream =
@@ -92,7 +88,7 @@
 
                     try
                     {
-                        Chmod(targetPath, (uint)executablePermissions);
+                        Chmod(targetPath, (uint)StringToInteger("0777", IntPtr.Zero, 8));
                     }
                     catch
                     {
@@ -103,3 +99,4 @@
         }
     }
 }
+#endif
