@@ -1505,3 +1505,39 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.TemplateResponse.Template
   nameWithType: TemplateResponse.Template
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils
+  name: Unosquare.Sparkfun.FingerprintModule.Utils
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.html
+  commentId: N:Unosquare.Sparkfun.FingerprintModule.Utils
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils
+  nameWithType: Unosquare.Sparkfun.FingerprintModule.Utils
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem
+  name: OperatingSystem
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html
+  commentId: T:Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem
+  nameWithType: OperatingSystem
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Osx
+  name: Osx
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html#Unosquare_Sparkfun_FingerprintModule_Utils_OperatingSystem_Osx
+  commentId: F:Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Osx
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Osx
+  nameWithType: OperatingSystem.Osx
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unix
+  name: Unix
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html#Unosquare_Sparkfun_FingerprintModule_Utils_OperatingSystem_Unix
+  commentId: F:Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unix
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unix
+  nameWithType: OperatingSystem.Unix
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unknown
+  name: Unknown
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html#Unosquare_Sparkfun_FingerprintModule_Utils_OperatingSystem_Unknown
+  commentId: F:Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unknown
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Unknown
+  nameWithType: OperatingSystem.Unknown
+- uid: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Windows
+  name: Windows
+  href: api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html#Unosquare_Sparkfun_FingerprintModule_Utils_OperatingSystem_Windows
+  commentId: F:Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Windows
+  fullName: Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.Windows
+  nameWithType: OperatingSystem.Windows

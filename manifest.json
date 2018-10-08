@@ -346,6 +346,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html",
+          "hash": "yqH/RavaOO4qUfYQwCtJRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Utils.html",
+          "hash": "W4nAjBwwH/stOKsWAeq1Aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/Unosquare.Sparkfun.FingerprintModule.yml",
       "output": {
         ".html": {
@@ -362,7 +386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "d9ZAQcUM6M8SkT7rllmrsw=="
+          "hash": "GjV6UJf9OHOV01Mgw97Kvg=="
         }
       },
       "is_incremental": false,
@@ -388,17 +412,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "TocDocumentProcessor": {
