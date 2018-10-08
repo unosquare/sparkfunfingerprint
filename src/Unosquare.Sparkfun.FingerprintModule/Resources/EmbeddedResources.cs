@@ -76,7 +76,9 @@
 
             foreach (var resourceName in ResourceNames)
             {
-                var filename = resourceName.Substring($"{typeof(EmbeddedResources).Namespace}.".Length);
+                var filename = resourceName
+                    .Substring($"{typeof(EmbeddedResources).Namespace}.".Length)
+                    .Replace(".temp", string.Empty);
                 var targetPath = Path.Combine(basePath, filename);
                 if (File.Exists(targetPath)) return;
 
@@ -90,7 +92,7 @@
 
                     try
                     {
-                        Chmod(targetPath, (uint) executablePermissions);
+                        Chmod(targetPath, (uint)executablePermissions);
                     }
                     catch
                     {

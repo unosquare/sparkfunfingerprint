@@ -11,10 +11,10 @@
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\libnserial.so.1" />
+    <EmbeddedResource Include="Resources\libnserial.so.1.temp" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <None Remove="Resources\libnserial.so.1" />
+    <None Remove="Resources\libnserial.so.1.temp" />
   </ItemGroup>
   <ItemGroup> 
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
