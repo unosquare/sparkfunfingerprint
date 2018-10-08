@@ -1346,12 +1346,12 @@ references:
   commentId: T:Unosquare.Sparkfun.FingerprintModule.PacketBase
   fullName: Unosquare.Sparkfun.FingerprintModule.PacketBase
   nameWithType: PacketBase
-- uid: Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLenght
-  name: BasePacketLenght
-  href: api/Unosquare.Sparkfun.FingerprintModule.PacketBase.html#Unosquare_Sparkfun_FingerprintModule_PacketBase_BasePacketLenght
-  commentId: F:Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLenght
-  fullName: Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLenght
-  nameWithType: PacketBase.BasePacketLenght
+- uid: Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLength
+  name: BasePacketLength
+  href: api/Unosquare.Sparkfun.FingerprintModule.PacketBase.html#Unosquare_Sparkfun_FingerprintModule_PacketBase_BasePacketLength
+  commentId: F:Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLength
+  fullName: Unosquare.Sparkfun.FingerprintModule.PacketBase.BasePacketLength
+  nameWithType: PacketBase.BasePacketLength
 - uid: Unosquare.Sparkfun.FingerprintModule.PacketBase.HasDataPacket
   name: HasDataPacket
   href: api/Unosquare.Sparkfun.FingerprintModule.PacketBase.html#Unosquare_Sparkfun_FingerprintModule_PacketBase_HasDataPacket
