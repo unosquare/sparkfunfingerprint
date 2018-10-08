@@ -7,10 +7,10 @@
 
 Interfacing Library for .NET 4.5.
 
-* Wiki: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide
-* Reference Manual: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf
-* Data sheet: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521FX2_datasheet_V1.1__003_.pdf
-* Product Page: https://www.sparkfun.com/products/14585
+* [Product Page](https://www.sparkfun.com/products/14585)
+* [Data sheet](https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521FX2_datasheet_V1.1__003_.pdf)
+* [Reference Manual](https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf)
+* [Wiki](https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide)
 
 ![GT-521Fxx](https://github.com/unosquare/sparkfunfingerprint/raw/master/logos/sffp-image.jpg "GT-521Fxx")
 
@@ -41,9 +41,12 @@ Interfacing Library for .NET 4.5.
 ## Library Features
 * All documented commands are implemented (2018-06-25)
 * Operations are all asynchronous
-* No dependencies
 * Nice sample application included for testing
 * MIT License
+* .Net Framework
+  * No dependencies
+* .Net Standard
+  * [SerialPortStream](https://github.com/jcurl/serialportstream): Independent implementation of System.IO.Ports.SerialPort and SerialStream for portability.
 
 ## NuGet Installation: [![NuGet version](https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader.svg)](https://badge.fury.io/nu/Unosquare.Sparkfun.FingerprintReader)
 
