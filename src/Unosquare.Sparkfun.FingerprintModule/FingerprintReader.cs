@@ -518,26 +518,26 @@
         #region Private Functions
 
         /// <summary>
-        /// Opens and initialize the fingerprint device at the specified port name with the especified baudrate.
+        /// Opens and initialize the fingerprint device at the specified port name with the specified baud rate.
         /// </summary>
         /// <param name="portName">Name of the port.</param>
-        /// <param name="baudrate">The baudrate.</param>
+        /// <param name="baudRate">The baud rate.</param>
         /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
         /// <returns>A task that represents the asynchronous open operation.</returns>
         /// <exception cref="Exception">The device could not be initialized.</exception>
-        private async Task OpenAsync(string portName, int baudrate, CancellationToken ct)
+        private async Task OpenAsync(string portName, int baudRate, CancellationToken ct)
         {
 #if NET452
-            _serialPort = new SerialPort(portName, baudrate, Parity.None, 8, StopBits.One);
+            _serialPort = new SerialPort(portName, baudRate, Parity.None, 8, StopBits.One);
 #else
-            _serialPort = new SerialPortStream(portName, baudrate, 8, Parity.None, StopBits.One);
+            _serialPort = new SerialPortStream(portName, baudRate, 8, Parity.None, StopBits.One);
 #endif
             _serialPort.Open();
             await Task.Delay(100, ct);
 
-            if (baudrate != TargetBaudRate)
+            if (baudRate != TargetBaudRate)
             {
-                // Chage baudrate to target baudrate for better performance
+                // Change baud rate to target baud rate for better performance
                 await SetBaudrateAsync(TargetBaudRate, ct);
             }
             else
@@ -546,7 +546,7 @@
                 if (!_deviceInfo.IsSuccessful)
                     throw new Exception("The device could not be initialized.");
 
-                await TurnLedOnAsync();
+                await TurnLedOnAsync(ct);
             }
         }
 
@@ -571,19 +571,19 @@
             GetResponseAsync<BasicResponse>(Command.Create(CommandCode.Close), ct);
 
         /// <summary>
-        /// Sets the baudrate asynchronous.
+        /// Sets the baud rate asynchronous.
         /// This closes and re-opens the device.
         /// </summary>
-        /// <param name="baudrate">The baudrate.</param>
+        /// <param name="baudrate">The baud rate.</param>
         /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
-        /// <returns>A task that represents the asynchronous set baudrate operation.
+        /// <returns>A task that represents the asynchronous set baud rate operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
         private async Task<BasicResponse> SetBaudrateAsync(int baudrate, CancellationToken ct)
         {
             var response = await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudrate), ct);
 
-            // It is possible that we don't have a response when changing baudrate 
+            // It is possible that we don't have a response when changing baud rate 
             // because we are still listening with the previous config. 
             // If this happens we'll have a communication error response (CommErr)
             if (response.IsSuccessful || response.ErrorCode == ErrorCode.CommErr)
@@ -694,7 +694,7 @@
         private async Task<T> GetResponseAsync<T>(Command command, TimeSpan responseTimeout, CancellationToken ct)
                     where T : ResponseBase
         {
-            var expectedResponseLength = PacketBase.BasePacketLenght;
+            var expectedResponseLength = PacketBase.BasePacketLength;
             if (ResponseBase.ResponseDataLength.ContainsKey(command.CommandCode))
             {
                 expectedResponseLength += 6 + ResponseBase.ResponseDataLength[command.CommandCode];
@@ -702,7 +702,7 @@
                 // Special cases
                 if ((command.CommandCode == CommandCode.Open && command.Parameter == 0) ||
                     (command.CommandCode == CommandCode.Enroll3 && command.Parameter != -1))
-                    expectedResponseLength = PacketBase.BasePacketLenght;
+                    expectedResponseLength = PacketBase.BasePacketLength;
             }
 
             _serialPortDone.Wait(ct);
