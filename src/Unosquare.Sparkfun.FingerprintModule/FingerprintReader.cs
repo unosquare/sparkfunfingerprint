@@ -1,16 +1,11 @@
 ﻿namespace Unosquare.Sparkfun.FingerprintModule
 {
+    using SerialPort;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-#if NET452
-    using System.IO.Ports;
-#else
-    using RJCP.IO.Ports;
-    using Resources;
-#endif
 
     /// <summary>
     /// The main class representing the Sparkfun fingerprint reader module GT521Fxx.
@@ -20,43 +15,17 @@
     /// <seealso cref="System.IDisposable" />
     public class FingerprintReader : IDisposable
     {
-        #region Private consts
-
         private const int InitialBaudRate = 9600;
         private const int TargetBaudRate = 115200;
-
-        #endregion
-
-        #region Private static fields
 
         private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(1);
         private static readonly TimeSpan FingerActionTimeout = TimeSpan.FromSeconds(2);
         private static readonly TimeSpan EnrollTimeout = TimeSpan.FromSeconds(5);
 
-        #endregion
-
-        #region Private fields
-
-#if NET452
-        private SerialPort _serialPort;
-#else
-        private SerialPortStream _serialPort;
-#endif
+        private ISerialPort _serialPort;
         private ManualResetEventSlim _serialPortDone = new ManualResetEventSlim(true);
         private InitializationResponse _deviceInfo;
         private bool _disposedValue; // To detect redundant calls
-
-        #endregion
-
-        #region Constructor
-
-#if !NET452
-        static FingerprintReader()
-        {
-            if (Utils.Runtime.OS != Utils.OperatingSystem.Windows)
-                EmbeddedResources.ExtractAll();
-        }
-#endif
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FingerprintReader"/> class.
@@ -67,8 +36,6 @@
         {
             FingerprintCapacity = (int)model - 1;
         }
-
-        #endregion
 
         #region Properties
 
@@ -251,7 +218,7 @@
         /// The result of the task contains a <see cref="bool"/> indicating if the action was performed.
         /// <c>true</c> if the action was performed; otherwise, <c>false</c>.
         /// </returns>
-        public Task<bool> WaitFingerActionAsync(FingerAction action, CancellationToken ct = default) => 
+        public Task<bool> WaitFingerActionAsync(FingerAction action, CancellationToken ct = default) =>
             WaitFingerActionAsync(action, FingerActionTimeout, ct);
 
         /// <summary>
@@ -536,11 +503,13 @@
         /// <exception cref="Exception">The device could not be initialized.</exception>
         private async Task OpenAsync(string portName, int baudRate, CancellationToken ct)
         {
+            _serialPort =
 #if NET452
-            _serialPort = new SerialPort(portName, baudRate, Parity.None, 8, StopBits.One);
+                new MsSerialPort(portName, baudRate);
 #else
-            _serialPort = new SerialPortStream(portName, baudRate, 8, Parity.None, StopBits.One);
+                new RjcpSerialPort(portName, baudRate);
 #endif
+
             _serialPort.Open();
             await Task.Delay(100, ct);
 
@@ -811,9 +780,9 @@
             return data.ToArray();
         }
 
-#endregion
+        #endregion
 
-#region IDisposable Support
+        #region IDisposable Support
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -838,6 +807,6 @@
             _disposedValue = true;
         }
 
-#endregion
+        #endregion
     }
 }
