@@ -775,6 +775,19 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetImageAsync
   nameWithType: FingerprintReader.GetImageAsync
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames
+  name: GetPortNames()
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetPortNames
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames()
+  nameWithType: FingerprintReader.GetPortNames()
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames*
+  name: GetPortNames
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetPortNames_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetPortNames
+  nameWithType: FingerprintReader.GetPortNames
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.GetRawImageAsync(System.Threading.CancellationToken)
   name: GetRawImageAsync(CancellationToken)
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_GetRawImageAsync_System_Threading_CancellationToken_
