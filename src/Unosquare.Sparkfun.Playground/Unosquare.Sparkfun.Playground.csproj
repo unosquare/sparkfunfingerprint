@@ -9,9 +9,6 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
     <PackageReference Include="Unosquare.Swan.Lite" Version="0.34.2" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
-    <PackageReference Include="SerialPortStream" Version="2.1.4" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unosquare.Sparkfun.FingerprintModule\Unosquare.Sparkfun.FingerprintModule.csproj" />
   </ItemGroup>

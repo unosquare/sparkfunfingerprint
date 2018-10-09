@@ -64,6 +64,17 @@
         #region Open-Close
 
         /// <summary>
+        /// Gets an array of serial port names for the current computer..
+        /// </summary>
+        /// <returns>An array of serial port names for the current computer.</returns>
+        public static string[] GetPortNames() =>
+#if NET452
+                MsSerialPort.GetPortNames();
+#else
+                RjcpSerialPort.GetPortNames();
+#endif
+
+        /// <summary>
         /// Opens and initialize the fingerprint device at the specified port name.
         /// </summary>
         /// <param name="portName">Name of the port.</param>
@@ -509,7 +520,6 @@
 #else
                 new RjcpSerialPort(portName, baudRate);
 #endif
-
             _serialPort.Open();
             await Task.Delay(100, ct);
 
@@ -733,13 +743,8 @@
             if (_serialPort == null || _serialPort.IsOpen == false)
                 throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
 
-#if NET452
-            await _serialPort.BaseStream.WriteAsync(payload, 0, payload.Length, ct);
-            await _serialPort.BaseStream.FlushAsync(ct);
-#else
             await _serialPort.WriteAsync(payload, 0, payload.Length, ct);
             await _serialPort.FlushAsync(ct);
-#endif
         }
 
         /// <summary>
@@ -762,11 +767,7 @@
             {
                 if (_serialPort.BytesToRead > 0)
                 {
-#if NET452
-                    var bytesRead = await _serialPort.BaseStream.ReadAsync(readed, 0, readed.Length, ct);
-#else
                     var bytesRead = await _serialPort.ReadAsync(readed, 0, readed.Length, ct);
-#endif
                     if (bytesRead > 0)
                         data.AddRange(readed.Take(bytesRead));
                 }

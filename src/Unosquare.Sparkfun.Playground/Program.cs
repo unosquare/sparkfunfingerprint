@@ -4,12 +4,6 @@ namespace Unosquare.Sparkfun.Playground
     using System.Collections.Generic;
     using FingerprintModule;
     using Swan;
-    using System.Threading;
-#if NETCOREAPP2_1
-    using RJCP.IO.Ports;
-#else
-    using System.IO.Ports;
-#endif
 
     public class Program
     {
@@ -28,22 +22,18 @@ namespace Unosquare.Sparkfun.Playground
         {
             try
             {
-                var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
-
                 "Getting ports...".Info();
-#if NETCOREAPP2_1
-                foreach (var p in SerialPortStream.GetPortNames())
-#else
-                foreach (var p in SerialPort.GetPortNames())
-#endif
+
+                foreach (var p in FingerprintReader.GetPortNames())
                 {
                     $"Port: {p}".Info();
                 }
 
                 "Creating port...".Info();
+                var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-                reader.OpenAsync("COM4").Wait();
+                reader.OpenAsync("COM4").GetAwaiter().GetResult();
 
                 $"Serial Number: {reader.SerialNumber}".Info();
                 $"Firmware Version: {reader.FirmwareVersion}".Info();
@@ -92,7 +82,7 @@ namespace Unosquare.Sparkfun.Playground
             }
             catch (Exception ex)
             {
-                ex.Message.Error();
+                ex.Log("Program.Main");
                 Console.ReadLine();
             }
         }

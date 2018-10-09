@@ -8,47 +8,35 @@ namespace Unosquare.Sparkfun.FingerprintModule.SerialPort
 
     internal class MsSerialPort : ISerialPort
     {
-        private SerialPort _serialPort;
+        private readonly SerialPort _serialPort;
 
         public MsSerialPort(string portName, int baudRate)
         {
-            PortName = portName;
-
             _serialPort = new SerialPort(portName, baudRate, Parity.None, 8, StopBits.One);
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        public string PortName => _serialPort?.PortName;
 
-        public string PortName { get; }
-        public bool IsOpen { get; }
-        public int BytesToRead { get; }
-        public void Open()
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsOpen => _serialPort?.IsOpen == true;
 
-        public void Close()
-        {
-            throw new NotImplementedException();
-        }
+        public int BytesToRead => _serialPort?.BytesToRead ?? throw new InvalidOperationException("Serial port is not open.");
 
-        public Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public static string[] GetPortNames() => SerialPort.GetPortNames();
 
-        public Task FlushAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public void Open() => _serialPort?.Open();
 
-        public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) =>
+            _serialPort?.BaseStream.WriteAsync(buffer, offset, count, cancellationToken);
+
+        public Task FlushAsync(CancellationToken cancellationToken) =>
+            _serialPort?.BaseStream.FlushAsync(cancellationToken);
+
+        public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) =>
+            _serialPort?.BaseStream.ReadAsync(buffer, offset, count, cancellationToken);
+
+        public void Close() => _serialPort?.Close();
+
+        public void Dispose() => _serialPort?.Dispose();
     }
 }
 #endif
