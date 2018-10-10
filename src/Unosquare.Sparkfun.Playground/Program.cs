@@ -2,13 +2,11 @@ namespace Unosquare.Sparkfun.Playground
 {
     using System;
     using System.Collections.Generic;
-    using System.IO.Ports;
     using FingerprintModule;
     using Swan;
 
-    class Program
+    public class Program
     {
-
         private const int InitialBaudRate = 9600;
         private const int TargetBaudRate = 115200;
 
@@ -26,42 +24,47 @@ namespace Unosquare.Sparkfun.Playground
             {
                 "Getting ports...".Info();
 
-                foreach (var p in SerialPort.GetPortNames())
+                foreach (var p in FingerprintReader.GetPortNames())
                 {
                     $"Port: {p}".Info();
                 }
 
                 "Creating port...".Info();
-
                 var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-                reader.Open("COM4").Wait();
+                reader.OpenAsync("COM4").GetAwaiter().GetResult();
 
                 $"Serial Number: {reader.SerialNumber}".Info();
                 $"Firmware Version: {reader.FirmwareVersion}".Info();
 
                 while (true)
                 {
-                    //Console.Clear();
                     var option = "Select an option".ReadPrompt(Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
-                        var countResponse = reader.CountEnrolledFingerprintAsync().Result;
+                        var countResponse = reader.CountEnrolledFingerprintAsync().GetAwaiter().GetResult();
                         if (countResponse.IsSuccessful)
                             $"Users enrolled: {countResponse.EnrolledFingerprints}".Info();
                     }
                     else if (option.Key == ConsoleKey.M)
                     {
-                        var matchResponse = reader.MatchOneToN().Result;
-                        if (matchResponse.IsSuccessful)
-                            $"UserId: {matchResponse.UserId}".Info();
-                        else
-                            $"Error: {matchResponse.ErrorCode}".Error();
+                        try
+                        {
+                            var matchResponse = reader.MatchOneToN().GetAwaiter().GetResult();
+                            if (matchResponse.IsSuccessful)
+                                $"UserId: {matchResponse.UserId}".Info();
+                            else
+                                $"Error: {matchResponse.ErrorCode}".Error();
+                        }
+                        catch (OperationCanceledException ex)
+                        {
+                            $"Error: {ex.Message}".Error();
+                        }
                     }
                     else if (option.Key == ConsoleKey.S)
                     {
-                        var standbyResponse = reader.EnterStandByMode().Result;
+                        var standbyResponse = reader.EnterStandByMode().GetAwaiter().GetResult();
                         if (standbyResponse.IsSuccessful)
                             $"Standby Mode".Info();
                         else
@@ -79,7 +82,7 @@ namespace Unosquare.Sparkfun.Playground
             }
             catch (Exception ex)
             {
-                ex.Message.Error();
+                ex.Log("Program.Main");
                 Console.ReadLine();
             }
         }

@@ -7,9 +7,9 @@
     public abstract class PacketBase : MessageBase
     {
         /// <summary>
-        /// The base packet lenght.
+        /// The base packet length.
         /// </summary>
-        public const int BasePacketLenght = 12;
+        public const int BasePacketLength = 12;
 
         /// <summary>
         /// Gets or sets the parameter.

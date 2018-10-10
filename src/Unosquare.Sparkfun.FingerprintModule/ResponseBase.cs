@@ -29,13 +29,13 @@
             Payload = payload;
             Parameter = payload.LittleEndianArrayToInt(4);
             Response = (ResponseCode)payload.LittleEndianArrayToUInt16(8);
-            IsCrcValid = payload.ValidateChecksum(0, BasePacketLenght - 1);
+            IsCrcValid = payload.ValidateChecksum(0, BasePacketLength - 1);
 
-            if (payload.Length <= BasePacketLenght) return;
-            var datapacketPayload = new byte[payload.Length - BasePacketLenght];
-            Array.Copy(payload, BasePacketLenght, datapacketPayload, 0, datapacketPayload.Length);
+            if (payload.Length <= BasePacketLength) return;
+            var dataPacketPayload = new byte[payload.Length - BasePacketLength];
+            Array.Copy(payload, BasePacketLength, dataPacketPayload, 0, dataPacketPayload.Length);
 
-            DataPacket = new ResponseDataPacket(datapacketPayload);
+            DataPacket = new ResponseDataPacket(dataPacketPayload);
         }
 
         /// <summary>

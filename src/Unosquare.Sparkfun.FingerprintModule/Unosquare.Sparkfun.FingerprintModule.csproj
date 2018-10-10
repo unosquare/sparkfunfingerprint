@@ -3,14 +3,20 @@
     <Copyright>Copyright (c) 2018 - Unosquare</Copyright>
     <Company>Unosquare</Company>
     <Authors>Unosquare</Authors>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>..\..\StyleCop.Analyzers.ruleset</CodeAnalysisRuleSet>
     <AssemblyName>Unosquare.Sparkfun.FingerprintModule</AssemblyName>
     <RootNamespace>Unosquare.Sparkfun.FingerprintModule</RootNamespace>
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <EmbeddedResource Include="Resources\libnserial.so.1.temp" />
+  </ItemGroup>
+  <ItemGroup> 
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="SerialPortStream" Version="2.1.4" />
   </ItemGroup>
 </Project>

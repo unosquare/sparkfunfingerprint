@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Represenst a command or request for fingerprint device.
+    /// Represents a command or request for fingerprint device.
     /// </summary>
     /// <seealso cref="Unosquare.Sparkfun.FingerprintModule.PacketBase" />
     public class Command
