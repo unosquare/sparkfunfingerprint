@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// Fingerprint reader model
+    /// Fingerprint reader model.
     /// </summary>
     /// <remarks>Each model has different fingerprint hold capacity.</remarks>
     public enum FingerprintReaderModel
@@ -22,7 +22,7 @@
     }
 
     /// <summary>
-    /// Response codes
+    /// Response codes.
     /// </summary>
     public enum ResponseCode : ushort
     {
@@ -38,7 +38,7 @@
     }
 
     /// <summary>
-    /// Command codes
+    /// Command codes.
     /// </summary>
     public enum CommandCode : ushort
     {
@@ -198,10 +198,10 @@
     }
 
     /// <summary>
-    /// Error codes
+    /// Error codes.
     /// </summary>
     /// <remarks>
-    /// Error codes 0 to 2999 indicate the ID for a duplicate fingerprint while enrollment or setting template
+    /// Error codes 0 to 2999 indicate the ID for a duplicate fingerprint while enrollment or setting template.
     /// </remarks>
     public enum ErrorCode
     {
@@ -316,7 +316,7 @@
     }
 
     /// <summary>
-    /// CMOS led status
+    /// CMOS led status.
     /// </summary>
     public enum LedStatus
     {
@@ -332,7 +332,7 @@
     }
 
     /// <summary>
-    /// Finger actions
+    /// Finger actions.
     /// </summary>
     public enum FingerAction
     {

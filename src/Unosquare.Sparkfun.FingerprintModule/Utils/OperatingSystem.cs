@@ -24,7 +24,7 @@ namespace Unosquare.Sparkfun.FingerprintModule.Utils
         /// <summary>
         /// macOS (OSX)
         /// </summary>
-        Osx
+        Osx,
     }
 }
 #endif

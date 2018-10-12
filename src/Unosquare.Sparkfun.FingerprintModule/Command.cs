@@ -71,7 +71,7 @@
         /// <param name="parameter">The parameter.</param>
         /// <param name="data">A byte array representing the data for a <see cref="CommandDataPacket"/>.</param>
         /// <returns>A <see cref="Command"/> object containing a <see cref="CommandDataPacket"/>.</returns>
-        /// <exception cref="ArgumentNullException">data</exception>
+        /// <exception cref="ArgumentNullException">data.</exception>
         /// <exception cref="ArgumentOutOfRangeException">data - Current data length does not match expected data length for the command.</exception>
         internal static Command Create(CommandCode commandCode, int parameter, byte[] data)
         {
