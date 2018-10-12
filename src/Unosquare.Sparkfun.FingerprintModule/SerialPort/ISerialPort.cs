@@ -4,10 +4,11 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface to wrap any Serial Port implementation.
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
+    /// <seealso cref="T:System.IDisposable" />
     public interface ISerialPort : IDisposable
     {
         /// <summary>
@@ -51,14 +52,14 @@
         /// <param name="offset">The offset.</param>
         /// <param name="count">The count.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
+        /// <returns>A task representing the write action.</returns>
         Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken);
 
         /// <summary>
         /// Flushes the asynchronous.
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
+        /// <returns>A task representing the flush action.</returns>
         Task FlushAsync(CancellationToken cancellationToken);
 
         /// <summary>
@@ -68,7 +69,7 @@
         /// <param name="offset">The offset.</param>
         /// <param name="count">The count.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
+        /// <returns>A task representing the count of bytes from the read.</returns>
         Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken);
     }
 }

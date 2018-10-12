@@ -50,7 +50,7 @@
         /// </summary>
         private void GeneratePayload()
         {
-            var payload = new List<byte>() { StartCode1, StartCode2 };
+            var payload = new List<byte> { StartCode1, StartCode2 };
             payload.AddRange(DeviceId);
             payload.AddRange(Data);
             var crc = payload.ComputeChecksum().ToLittleEndianArray();

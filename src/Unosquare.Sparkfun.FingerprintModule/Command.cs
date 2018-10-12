@@ -91,7 +91,7 @@
         /// </summary>
         private void GeneratePayload()
         {
-            var payload = new List<byte>() { BaseStartCode1, BaseStartCode2 };
+            var payload = new List<byte> { BaseStartCode1, BaseStartCode2 };
             payload.AddRange(BaseDeviceId);
             payload.AddRange(Parameter.ToLittleEndianArray());
             payload.AddRange(((ushort)CommandCode).ToLittleEndianArray());

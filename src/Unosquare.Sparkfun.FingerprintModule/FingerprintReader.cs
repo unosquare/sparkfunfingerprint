@@ -7,12 +7,13 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+    /// <inheritdoc />
     /// <summary>
     /// The main class representing the Sparkfun fingerprint reader module GT521Fxx.
     /// Reference: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf
     /// WIKI: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide.
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
+    /// <seealso cref="T:System.IDisposable" />
     public class FingerprintReader : IDisposable
     {
         private const int InitialBaudRate = 9600;
@@ -64,7 +65,10 @@
         #region Open-Close
 
         /// <summary>
-        /// Gets an array of serial port names for the current computer..
+        /// Gets an array of serial port names for the current computer.
+        ///
+        /// This method is just a shortcut for Microsoft and RJCP libraries,
+        /// you may use your SerialPort library to enumerate the available ports.
         /// </summary>
         /// <returns>An array of serial port names for the current computer.</returns>
         public static string[] GetPortNames() =>
@@ -663,15 +667,15 @@
             where T : ResponseBase
         {
             var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout, ct);
+
             if (!actionPerformed)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.FingerNotPressed);
 
             var captureResult = await CaptureFingerprintAsync(ct);
 
-            if (typeof(T) == captureResult.GetType())
-                return captureResult as T;
-
-            return Activator.CreateInstance(typeof(T), captureResult.Payload) as T;
+            return typeof(T) == captureResult.GetType()
+                ? captureResult as T
+                : Activator.CreateInstance(typeof(T), captureResult.Payload) as T;
         }
 
         /// <summary>
@@ -791,16 +795,16 @@
                 throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
 
             var data = new List<byte>();
-            var readed = new byte[1024];
+            var read = new byte[1024];
             var startTime = DateTime.Now;
 
             while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
             {
                 if (_serialPort.BytesToRead > 0)
                 {
-                    var bytesRead = await _serialPort.ReadAsync(readed, 0, readed.Length, ct);
+                    var bytesRead = await _serialPort.ReadAsync(read, 0, read.Length, ct);
                     if (bytesRead > 0)
-                        data.AddRange(readed.Take(bytesRead));
+                        data.AddRange(read.Take(bytesRead));
                 }
 
                 if (DateTime.Now.Subtract(startTime) > timeout)
@@ -816,9 +820,7 @@
 
         #region IDisposable Support
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
+        /// <inheritdoc />
         public void Dispose() => Dispose(true);
 
         /// <summary>
