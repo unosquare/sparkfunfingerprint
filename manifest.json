@@ -122,7 +122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CommandCode.html",
-          "hash": "Voxj95e1TdrkhsNwpaeM7w=="
+          "hash": "J+6sRfEP1o0dNFV8FqpZWw=="
         }
       },
       "is_incremental": false,
@@ -254,7 +254,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.InitializationResponse.html",
-          "hash": "ZsWuLM3igC5IvStrrMHw/g=="
+          "hash": "OgsqZ3pEL+nUiSgS+v6P7g=="
         }
       },
       "is_incremental": false,
@@ -440,6 +440,10 @@
           "can_incremental": true,
           "incrementalPhase": "build"
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -448,10 +452,6 @@
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
