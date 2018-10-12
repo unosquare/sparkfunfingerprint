@@ -919,6 +919,12 @@ references:
   commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String,System.Threading.CancellationToken)
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String, System.Threading.CancellationToken)
   nameWithType: FingerprintReader.OpenAsync(String, CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort,System.Threading.CancellationToken)
+  name: OpenAsync(ISerialPort, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_OpenAsync_Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort,System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort, System.Threading.CancellationToken)
+  nameWithType: FingerprintReader.OpenAsync(ISerialPort, CancellationToken)
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync*
   name: OpenAsync
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_OpenAsync_
@@ -1483,6 +1489,128 @@ references:
   commentId: F:Unosquare.Sparkfun.FingerprintModule.ResponseCode.Nack
   fullName: Unosquare.Sparkfun.FingerprintModule.ResponseCode.Nack
   nameWithType: ResponseCode.Nack
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort
+  name: Unosquare.Sparkfun.FingerprintModule.SerialPort
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.html
+  commentId: N:Unosquare.Sparkfun.FingerprintModule.SerialPort
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort
+  nameWithType: Unosquare.Sparkfun.FingerprintModule.SerialPort
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort
+  name: ISerialPort
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html
+  commentId: T:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort
+  nameWithType: ISerialPort
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead
+  name: BytesToRead
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_BytesToRead
+  commentId: P:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead
+  nameWithType: ISerialPort.BytesToRead
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead*
+  name: BytesToRead
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_BytesToRead_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.BytesToRead
+  nameWithType: ISerialPort.BytesToRead
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close
+  name: Close()
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_Close
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close()
+  nameWithType: ISerialPort.Close()
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close*
+  name: Close
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_Close_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Close
+  nameWithType: ISerialPort.Close
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync(System.Threading.CancellationToken)
+  name: FlushAsync(CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_FlushAsync_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync(System.Threading.CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync(System.Threading.CancellationToken)
+  nameWithType: ISerialPort.FlushAsync(CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync*
+  name: FlushAsync
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_FlushAsync_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.FlushAsync
+  nameWithType: ISerialPort.FlushAsync
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen
+  name: IsOpen
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_IsOpen
+  commentId: P:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen
+  nameWithType: ISerialPort.IsOpen
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen*
+  name: IsOpen
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_IsOpen_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.IsOpen
+  nameWithType: ISerialPort.IsOpen
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open
+  name: Open()
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_Open
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open()
+  nameWithType: ISerialPort.Open()
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open*
+  name: Open
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_Open_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.Open
+  nameWithType: ISerialPort.Open
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName
+  name: PortName
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_PortName
+  commentId: P:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName
+  nameWithType: ISerialPort.PortName
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName*
+  name: PortName
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_PortName_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.PortName
+  nameWithType: ISerialPort.PortName
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  name: ReadAsync(Byte[], Int32, Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_ReadAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  name.vb: ReadAsync(Byte(), Int32, Int32, CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync(System.Byte(), System.Int32, System.Int32, System.Threading.CancellationToken)
+  nameWithType: ISerialPort.ReadAsync(Byte[], Int32, Int32, CancellationToken)
+  nameWithType.vb: ISerialPort.ReadAsync(Byte(), Int32, Int32, CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync*
+  name: ReadAsync
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_ReadAsync_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.ReadAsync
+  nameWithType: ISerialPort.ReadAsync
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  name: WriteAsync(Byte[], Int32, Int32, CancellationToken)
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_WriteAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_
+  commentId: M:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  name.vb: WriteAsync(Byte(), Int32, Int32, CancellationToken)
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
+  fullName.vb: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync(System.Byte(), System.Int32, System.Int32, System.Threading.CancellationToken)
+  nameWithType: ISerialPort.WriteAsync(Byte[], Int32, Int32, CancellationToken)
+  nameWithType.vb: ISerialPort.WriteAsync(Byte(), Int32, Int32, CancellationToken)
+- uid: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync*
+  name: WriteAsync
+  href: api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html#Unosquare_Sparkfun_FingerprintModule_SerialPort_ISerialPort_WriteAsync_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.WriteAsync
+  nameWithType: ISerialPort.WriteAsync
 - uid: Unosquare.Sparkfun.FingerprintModule.TemplateResponse
   name: TemplateResponse
   href: api/Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html
