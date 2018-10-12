@@ -2,13 +2,13 @@ namespace Unosquare.Sparkfun.Playground
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using FingerprintModule;
     using Swan;
 
     public class Program
     {
         private const int InitialBaudRate = 9600;
-        private const int TargetBaudRate = 115200;
 
         private static readonly Dictionary<ConsoleKey, string> Options = new Dictionary<ConsoleKey, string>
         {
@@ -18,7 +18,7 @@ namespace Unosquare.Sparkfun.Playground
             {ConsoleKey.S, "Enter standby mode"},
         };
 
-        static void Main(string[] args)
+        public static async Task Main(string[] args) 
         {
             try
             {
@@ -33,7 +33,7 @@ namespace Unosquare.Sparkfun.Playground
                 var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-                reader.OpenAsync("COM4").GetAwaiter().GetResult();
+                await reader.OpenAsync("COM4");
 
                 $"Serial Number: {reader.SerialNumber}".Info();
                 $"Firmware Version: {reader.FirmwareVersion}".Info();
@@ -43,7 +43,8 @@ namespace Unosquare.Sparkfun.Playground
                     var option = "Select an option".ReadPrompt(Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
-                        var countResponse = reader.CountEnrolledFingerprintAsync().GetAwaiter().GetResult();
+                        var countResponse = await reader.CountEnrolledFingerprintAsync();
+
                         if (countResponse.IsSuccessful)
                             $"Users enrolled: {countResponse.EnrolledFingerprints}".Info();
                     }
@@ -51,7 +52,8 @@ namespace Unosquare.Sparkfun.Playground
                     {
                         try
                         {
-                            var matchResponse = reader.MatchOneToN().GetAwaiter().GetResult();
+                            var matchResponse = await reader.MatchOneToN();
+
                             if (matchResponse.IsSuccessful)
                                 $"UserId: {matchResponse.UserId}".Info();
                             else
@@ -64,9 +66,10 @@ namespace Unosquare.Sparkfun.Playground
                     }
                     else if (option.Key == ConsoleKey.S)
                     {
-                        var standbyResponse = reader.EnterStandByMode().GetAwaiter().GetResult();
+                        var standbyResponse = await reader.EnterStandByMode();
+
                         if (standbyResponse.IsSuccessful)
-                            $"Standby Mode".Info();
+                            "Standby Mode".Info();
                         else
                             $"Error: {standbyResponse.ErrorCode}".Error();
                     }

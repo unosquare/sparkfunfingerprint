@@ -58,7 +58,7 @@
         UsbInternalCheck = 0x03,
 
         /// <summary>
-        /// Change UART baudrate
+        /// Change UART baud rate
         /// </summary>
         ChangeBaudRate = 0x04,
 
@@ -328,7 +328,7 @@
         /// <summary>
         /// On
         /// </summary>
-        On
+        On,
     }
 
     /// <summary>
@@ -344,6 +344,6 @@
         /// <summary>
         /// Remove fingerprint from sensor
         /// </summary>
-        Remove
+        Remove,
     }
 }
