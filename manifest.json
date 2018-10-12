@@ -194,7 +194,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html",
-          "hash": "BMkut5SUgM7Vjtr+3sICyA=="
+          "hash": "pwIjDTfNky8tZTKaWrAqVQ=="
         }
       },
       "is_incremental": false,
@@ -338,7 +338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html",
-          "hash": "cNY3AU6dwR26d6ZGEwBUgA=="
+          "hash": "d4X6mLmVZTzuneAYHQhT0Q=="
         }
       },
       "is_incremental": false,
@@ -436,10 +436,6 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
@@ -452,6 +448,10 @@
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
