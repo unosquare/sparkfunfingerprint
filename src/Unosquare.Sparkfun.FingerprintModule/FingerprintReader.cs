@@ -549,7 +549,7 @@
             _serialPort.Open();
             await Task.Delay(100, ct);
 
-            if (!skipBaudRate || baudRate != TargetBaudRate)
+            if (!skipBaudRate && baudRate != TargetBaudRate)
             {
                 // Change baud rate to target baud rate for better performance
                 await SetBaudRateAsync(TargetBaudRate, ct);
