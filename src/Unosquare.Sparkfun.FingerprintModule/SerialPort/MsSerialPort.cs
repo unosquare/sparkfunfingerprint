@@ -36,7 +36,7 @@ namespace Unosquare.Sparkfun.FingerprintModule.SerialPort
 
         public void Close() => _serialPort?.Close();
 
-        public void Dispose() => _serialPort?.Dispose();
+        void IDisposable.Dispose() => _serialPort?.Dispose();
     }
 }
 #endif

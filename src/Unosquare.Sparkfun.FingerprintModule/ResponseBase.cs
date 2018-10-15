@@ -94,7 +94,7 @@
             where T : ResponseBase
         {
             // TODO: General payload generation code
-            var payload = new List<byte>() { BaseStartCode1, BaseStartCode2 };
+            var payload = new List<byte> { BaseStartCode1, BaseStartCode2 };
             payload.AddRange(BaseDeviceId);
             payload.AddRange(((int)errorCode).ToLittleEndianArray());
             payload.AddRange(((ushort)ResponseCode.Nack).ToLittleEndianArray());

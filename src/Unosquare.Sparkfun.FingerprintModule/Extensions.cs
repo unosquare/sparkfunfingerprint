@@ -13,7 +13,7 @@
         /// </summary>
         /// <param name="payload">The payload.</param>
         /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
-        /// <exception cref="ArgumentException">payload</exception>
+        /// <exception cref="ArgumentException">payload.</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload)
         {
             if (payload == null || payload.Count == 0)
@@ -29,7 +29,7 @@
         /// <param name="startIndex">The start index.</param>
         /// <param name="endIndex">The end index.</param>
         /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
-        /// <exception cref="ArgumentException">payload</exception>
+        /// <exception cref="ArgumentException">payload.</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload, int startIndex, int endIndex)
         {
             if (payload == null || payload.Count < endIndex + 1)
@@ -51,7 +51,7 @@
         /// <returns>A <see cref="bool"/> indicating if the CRC is valid. 
         /// <c>true</c> if the CRC is valid; otherwise, <c>false</c>.
         /// </returns>
-        /// <exception cref="ArgumentException">payload</exception>
+        /// <exception cref="ArgumentException">payload.</exception>
         internal static bool ValidateChecksum(this byte[] payload)
         {
             if (payload == null || payload.Length == 0)
@@ -69,7 +69,7 @@
         /// <returns>A <see cref="bool"/> indicating if the CRC is valid. 
         /// <c>true</c> if the CRC is valid; otherwise, <c>false</c>.
         /// </returns>
-        /// <exception cref="ArgumentException">payload</exception>
+        /// <exception cref="ArgumentException">payload.</exception>
         internal static bool ValidateChecksum(this byte[] payload, int startIndex, int endIndex)
         {
             if (payload == null || payload.Length < endIndex + 1)

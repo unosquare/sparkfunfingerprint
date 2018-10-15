@@ -27,9 +27,9 @@
     public sealed class InitializationResponse : ResponseBase
     {
         /// <summary>
-        /// No information common message.
+        /// The no information label.
         /// </summary>
-        public const string NoInfo = "No info available";
+        public static string NoInfo = "No info available";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InitializationResponse"/> class.

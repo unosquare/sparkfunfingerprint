@@ -7,12 +7,13 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+    /// <inheritdoc />
     /// <summary>
     /// The main class representing the Sparkfun fingerprint reader module GT521Fxx.
     /// Reference: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf
-    /// WIKI: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide
+    /// WIKI: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide.
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
+    /// <seealso cref="T:System.IDisposable" />
     public class FingerprintReader : IDisposable
     {
         private const int InitialBaudRate = 9600;
@@ -64,7 +65,10 @@
         #region Open-Close
 
         /// <summary>
-        /// Gets an array of serial port names for the current computer..
+        /// Gets an array of serial port names for the current computer.
+        ///
+        /// This method is just a shortcut for Microsoft and RJCP libraries,
+        /// you may use your SerialPort library to enumerate the available ports.
         /// </summary>
         /// <returns>An array of serial port names for the current computer.</returns>
         public static string[] GetPortNames() =>
@@ -77,8 +81,23 @@
         /// <summary>
         /// Opens and initialize the fingerprint device at the specified port name.
         /// </summary>
+        /// <param name="serialPort">The serial port.</param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
+        /// <returns>A task that represents the asynchronous open operation.</returns>
+        /// <exception cref="InvalidOperationException">Device is already open. Call the close method first.</exception>
+        public Task OpenAsync(ISerialPort serialPort, CancellationToken ct = default)
+        {
+            if (_serialPort != null)
+                throw new InvalidOperationException("Device is already open. Call the close method first.");
+
+            return OpenAsync(serialPort, InitialBaudRate, true, ct);
+        }
+
+        /// <summary>
+        /// Opens and initialize the fingerprint device at the specified port name.
+        /// </summary>
         /// <param name="portName">Name of the port.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous open operation.</returns>
         /// <exception cref="InvalidOperationException">Device is already open. Call the close method first.</exception>
         public Task OpenAsync(string portName, CancellationToken ct = default)
@@ -86,13 +105,21 @@
             if (_serialPort != null)
                 throw new InvalidOperationException("Device is already open. Call the close method first.");
 
-            return OpenAsync(portName, InitialBaudRate, ct);
+            return OpenAsync(
+#if NET452
+                new MsSerialPort(portName, InitialBaudRate),
+#else
+                new RjcpSerialPort(portName, InitialBaudRate),
+#endif
+                InitialBaudRate,
+                false,
+                ct);
         }
 
         /// <summary>
         /// Closes the fingerprint device if open.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous close operation.</returns>
         public async Task CloseAsync(CancellationToken ct = default)
         {
@@ -121,7 +148,7 @@
         /// Sets the let status asynchronous.
         /// </summary>
         /// <param name="status">The status.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous set led status operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
@@ -136,7 +163,7 @@
         /// <summary>
         /// Turns the led on asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous turn led on operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
@@ -146,7 +173,7 @@
         /// <summary>
         /// Turns the led off asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous turn led off operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
@@ -156,7 +183,7 @@
         /// <summary>
         /// Fasts device searching asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous set fast device searching goperation.
         /// The result of the task contains an instance of <see cref="FastSearchingResponse"/>. 
         /// </returns>
@@ -169,7 +196,7 @@
         /// <summary>
         /// Counts the enrolled fingerprint asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous count enrolled fingerprint operation.
         /// The result of the task contains an instance of <see cref="CountEnrolledFingerprintResponse"/>. 
         /// </returns>
@@ -180,7 +207,7 @@
         /// Checks the enrollment status asynchronous.
         /// </summary>
         /// <param name="userId">The user identifier to check.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous check enrolled status operation.
         /// The result of the task contains an instance of <see cref="CheckEnrollmentResponse"/>. 
         /// </returns>
@@ -192,14 +219,14 @@
         /// </summary>
         /// <param name="iteration">The iteration.</param>
         /// <param name="userId">The user identifier.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous enroll user operation.
         /// The result of the task contains an instance of <see cref="EnrollmentResponse"/>. 
         /// </returns>
         /// <exception cref="ArgumentOutOfRangeException">
         /// iteration
         /// or
-        /// userId
+        /// userId.
         /// </exception>
         public async Task<EnrollmentResponse> EnrollUserAsync(int iteration, int userId, CancellationToken ct = default)
         {
@@ -224,7 +251,7 @@
         /// Waits a finger action asynchronous.
         /// </summary>
         /// <param name="action">The action to wait for.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous wait finger action operation.
         /// The result of the task contains a <see cref="bool"/> indicating if the action was performed.
         /// <c>true</c> if the action was performed; otherwise, <c>false</c>.
@@ -237,7 +264,7 @@
         /// </summary>
         /// <param name="action">The action to wait for.</param>
         /// <param name="timeout">The timeout.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous wait finger action operation.
         /// The result of the task contains a <see cref="bool"/> indicating if the action was performed.
         /// <c>true</c> if the action was performed; otherwise, <c>false</c>.
@@ -265,7 +292,7 @@
         /// <summary>
         /// Checks the finger pressing status asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous check finger pressing status operation.
         /// The result of the task contains an instance of <see cref="CheckFingerPressingResponse"/>. 
         /// </returns>
@@ -275,7 +302,7 @@
         /// <summary>
         /// Deletes all users from device's database asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous delete all users operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
@@ -286,11 +313,11 @@
         /// Deletes a specific user asynchronous.
         /// </summary>
         /// <param name="userId">The user identifier.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous delete user operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">userId</exception>
+        /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<BasicResponse> DeleteUserAsync(int userId, CancellationToken ct = default)
         {
             if (userId < 0 || userId > FingerprintCapacity)
@@ -303,11 +330,11 @@
         /// Match 1:1 asynchronous. Acquires an image from the device and verify if it matches the supplied user id.
         /// </summary>
         /// <param name="userId">The user identifier.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous match one to one operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">userId</exception>
+        /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public async Task<BasicResponse> MatchOneToOneAsync(int userId, CancellationToken ct = default)
         {
             if (userId < 0 || userId > FingerprintCapacity)
@@ -325,11 +352,11 @@
         /// </summary>
         /// <param name="userId">The user identifier.</param>
         /// <param name="template">The fingerprint template.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous match one to one operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">userId</exception>
+        /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public async Task<BasicResponse> MatchOneToOneAsync(int userId, byte[] template, CancellationToken ct = default)
         {
             if (userId < 0 || userId > FingerprintCapacity)
@@ -341,7 +368,7 @@
         /// <summary>
         /// Match 1:N asynchronous. Acquires an image from the device and identifies the user id it belongs to.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous match one to n operation.
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse"/>. 
         /// </returns>
@@ -358,7 +385,7 @@
         /// Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.
         /// </summary>
         /// <param name="template">The fingerprint template.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous match one to n operation.
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse" />.
         /// </returns>
@@ -369,7 +396,7 @@
         /// Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.
         /// </summary>
         /// <param name="template">The special fingerprint template.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous match one to n operation.
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse" />.
         /// </returns>
@@ -380,7 +407,7 @@
         /// <summary>
         /// Makes a fingerprint template asynchronous. This template must be used only for transmission and not for user enrollment.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous make template operation.
         /// The result of the task contains an instance of <see cref="TemplateResponse" />.
         /// </returns>
@@ -396,7 +423,7 @@
         /// <summary>
         /// Gets a fingerprint image asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get image operation.
         /// The result of the task contains an instance of <see cref="GetFingerprintImageResponse" />.
         /// </returns>
@@ -412,7 +439,7 @@
         /// <summary>
         /// Gets a raw image from the device asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get raw image operation.
         /// The result of the task contains an instance of <see cref="GetRawImageResponse" />.
         /// </returns>
@@ -429,11 +456,11 @@
         /// Gets a fingerprint template asynchronous.
         /// </summary>
         /// <param name="userId">The user identifier.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get template operation.
         /// The result of the task contains an instance of <see cref="TemplateResponse" />.
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">userId</exception>
+        /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<TemplateResponse> GetTemplateAsync(int userId, CancellationToken ct = default)
         {
             if (userId < 0 || userId > FingerprintCapacity)
@@ -447,11 +474,11 @@
         /// </summary>
         /// <param name="userId">The user identifier.</param>
         /// <param name="template">The fingerprint template.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous set template operation.
         /// The result of the task contains an instance of <see cref="BasicResponse" />.
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">userId</exception>
+        /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<BasicResponse> SetTemplateAsync(int userId, byte[] template, CancellationToken ct = default)
         {
             if (userId < 0 || userId > FingerprintCapacity)
@@ -463,7 +490,7 @@
         /// <summary>
         /// Sets device to stand by mode (low power mode).
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous enter standby operation.
         /// The result of the task contains an instance of <see cref="BasicResponse" />.
         /// </returns>
@@ -477,11 +504,11 @@
         /// Sets the device's security level asynchronous. 1 is the lowest security level, 5 is the highest security level.
         /// </summary>
         /// <param name="level">The security level.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous set security level operation.
         /// The result of the task contains an instance of <see cref="BasicResponse" />.
         /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">level</exception>
+        /// <exception cref="ArgumentOutOfRangeException">level.</exception>
         public Task<BasicResponse> SetSecurityLevelAsync(int level, CancellationToken ct = default)
         {
             if (level < 1 || level > 5)
@@ -493,7 +520,7 @@
         /// <summary>
         /// Gets the device's security level asynchronous. 1 is the lowest security level, 5 is the highest security level.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get security level operation.
         /// The result of the task contains an instance of <see cref="GetSecurityLevelResponse" />.
         /// </returns>
@@ -507,26 +534,25 @@
         /// <summary>
         /// Opens and initialize the fingerprint device at the specified port name with the specified baud rate.
         /// </summary>
-        /// <param name="portName">Name of the port.</param>
+        /// <param name="serialPort">The serial port.</param>
         /// <param name="baudRate">The baud rate.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
-        /// <returns>A task that represents the asynchronous open operation.</returns>
+        /// <param name="skipBaudRate">if set to <c>true</c> [skip baud rate].</param>
+        /// <param name="ct">An instance of <see cref="CancellationToken" />.</param>
+        /// <returns>
+        /// A task that represents the asynchronous open operation.
+        /// </returns>
         /// <exception cref="Exception">The device could not be initialized.</exception>
-        private async Task OpenAsync(string portName, int baudRate, CancellationToken ct)
+        private async Task OpenAsync(ISerialPort serialPort, int baudRate, bool skipBaudRate, CancellationToken ct)
         {
-            _serialPort =
-#if NET452
-                new MsSerialPort(portName, baudRate);
-#else
-                new RjcpSerialPort(portName, baudRate);
-#endif
+            _serialPort = serialPort;
+
             _serialPort.Open();
             await Task.Delay(100, ct);
 
-            if (baudRate != TargetBaudRate)
+            if (!skipBaudRate && baudRate != TargetBaudRate)
             {
                 // Change baud rate to target baud rate for better performance
-                await SetBaudrateAsync(TargetBaudRate, ct);
+                await SetBaudRateAsync(TargetBaudRate, ct);
             }
             else
             {
@@ -541,7 +567,7 @@
         /// <summary>
         /// Opens and initializes the device asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous open device operation.
         /// The result of the task contains an instance of <see cref="InitializationResponse"/>. 
         /// </returns>
@@ -551,7 +577,7 @@
         /// <summary>
         /// Closes the device asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous close device operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
@@ -562,14 +588,15 @@
         /// Sets the baud rate asynchronous.
         /// This closes and re-opens the device.
         /// </summary>
-        /// <param name="baudrate">The baud rate.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="baudRate">The baud rate.</param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous set baud rate operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
-        private async Task<BasicResponse> SetBaudrateAsync(int baudrate, CancellationToken ct)
+        private async Task<BasicResponse> SetBaudRateAsync(int baudRate, CancellationToken ct)
         {
-            var response = await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudrate), ct);
+            var response =
+                await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudRate), ct);
 
             // It is possible that we don't have a response when changing baud rate 
             // because we are still listening with the previous config. 
@@ -578,7 +605,15 @@
             {
                 var portName = _serialPort.PortName;
                 await CloseAsync(ct);
-                await OpenAsync(portName, baudrate, ct);
+                await OpenAsync(
+#if NET452
+                new MsSerialPort(portName, baudRate),
+#else
+                    new RjcpSerialPort(portName, baudRate),
+#endif
+                    baudRate,
+                    false,
+                    ct);
             }
 
             return response;
@@ -589,7 +624,7 @@
         /// </summary>
         /// <param name="iteration">The iteration.</param>
         /// <param name="userId">The user identifier.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous enroll operation.
         /// The result of the task contains an instance of <see cref="EnrollmentResponse"/>. 
         /// </returns>
@@ -611,7 +646,7 @@
         /// <summary>
         /// Capture fingerprint pattern asynchronous. A special pattern for capture a fingerprint from the device.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <typeparam name="T">A final response type.</typeparam>
         /// <returns>A task that represents the asynchronous capture fingerprint pattern operation.
         /// The result of the task contains an instance of a response of type T.
@@ -624,7 +659,7 @@
         /// </summary>
         /// <typeparam name="T">A final response type.</typeparam>
         /// <param name="fingerActionTimeout">The finger action timeout.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous capture fingerprint pattern operation.
         /// The result of the task contains an instance of a response of type T.
         /// </returns>
@@ -632,21 +667,21 @@
             where T : ResponseBase
         {
             var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout, ct);
+
             if (!actionPerformed)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.FingerNotPressed);
 
             var captureResult = await CaptureFingerprintAsync(ct);
 
-            if (typeof(T) == captureResult.GetType())
-                return captureResult as T;
-
-            return Activator.CreateInstance(typeof(T), captureResult.Payload) as T;
+            return typeof(T) == captureResult.GetType()
+                ? captureResult as T
+                : Activator.CreateInstance(typeof(T), captureResult.Payload) as T;
         }
 
         /// <summary>
         /// Captures a fingerprint from the device asynchronous.
         /// </summary>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous capture fingerprint operation.
         /// The result of the task contains an instance of <see cref="BasicResponse" />.
         /// </returns>
@@ -662,7 +697,7 @@
         /// </summary>
         /// <typeparam name="T">A final response type.</typeparam>
         /// <param name="command">The command object to send.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get response operation.
         /// The result of the task contains an instance of a response type T.
         /// </returns>
@@ -675,7 +710,7 @@
         /// <typeparam name="T">A final response type.</typeparam>
         /// <param name="command">The command object to send.</param>
         /// <param name="responseTimeout">The response timeout.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous get response operation.
         /// The result of the task contains an instance of a response type T.
         /// </returns>
@@ -736,7 +771,7 @@
         /// Writes data to the serial port asynchronous.
         /// </summary>
         /// <param name="payload">The payload.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous write operation.</returns>
         private async Task WriteAsync(byte[] payload, CancellationToken ct)
         {
@@ -752,7 +787,7 @@
         /// </summary>
         /// <param name="expectedResponseLength">Expected length of the response.</param>
         /// <param name="timeout">The timeout.</param>
-        /// <param name="ct">An instance of <see cref="CancellationToken"/></param>
+        /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
         /// <returns>A task that represents the asynchronous read operation.</returns>
         private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct)
         {
@@ -760,16 +795,16 @@
                 throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
 
             var data = new List<byte>();
-            var readed = new byte[1024];
+            var read = new byte[1024];
             var startTime = DateTime.Now;
 
             while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
             {
                 if (_serialPort.BytesToRead > 0)
                 {
-                    var bytesRead = await _serialPort.ReadAsync(readed, 0, readed.Length, ct);
+                    var bytesRead = await _serialPort.ReadAsync(read, 0, read.Length, ct);
                     if (bytesRead > 0)
-                        data.AddRange(readed.Take(bytesRead));
+                        data.AddRange(read.Take(bytesRead));
                 }
 
                 if (DateTime.Now.Subtract(startTime) > timeout)
@@ -785,9 +820,7 @@
 
         #region IDisposable Support
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
+        /// <inheritdoc />
         public void Dispose() => Dispose(true);
 
         /// <summary>
