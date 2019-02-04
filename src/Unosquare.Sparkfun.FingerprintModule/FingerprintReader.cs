@@ -37,7 +37,8 @@
         /// <remarks>The model determines the device capacity.</remarks>
         public FingerprintReader(FingerprintReaderModel model)
         {
-            FingerprintCapacity = (int)model - 1;
+            FingerprintCapacity = (int)model;
+            MaxValidId = FingerprintCapacity - 1;
         }
 
         #region Properties
@@ -46,6 +47,14 @@
         /// Gets the fingerprint capacity.
         /// </summary>
         public int FingerprintCapacity { get; }
+
+        /// <summary>
+        /// Gets the maximum valid identifier.
+        /// </summary>
+        /// <value>
+        /// The maximum valid identifier.
+        /// </value>
+        public int MaxValidId { get; }
 
         /// <summary>
         /// Gets the device firmware version.
@@ -232,11 +241,11 @@
         /// </exception>
         public async Task<EnrollmentResponse> EnrollUserAsync(int iteration, int userId, CancellationToken ct = default)
         {
-            if (iteration < 0 || iteration > 3)
+            if (iteration <= 0 || iteration > 3)
                 throw new ArgumentOutOfRangeException($"{nameof(iteration)} must be a number between 1 and 3");
 
-            if (userId < -1 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between -1 and {FingerprintCapacity}.");
+            if (userId < -1 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between -1 and {MaxValidId}.");
 
             if (iteration == 1)
             {
@@ -322,8 +331,8 @@
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<BasicResponse> DeleteUserAsync(int userId, CancellationToken ct = default)
         {
-            if (userId < 0 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
+            if (userId < 0 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
             return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.DeleteID, userId), ct);
         }
@@ -339,8 +348,8 @@
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public async Task<BasicResponse> MatchOneToOneAsync(int userId, CancellationToken ct = default)
         {
-            if (userId < 0 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
+            if (userId < 0 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
             var captureResult = await CaptureFingerprintPatternAsync<BasicResponse>(ct);
             if (!captureResult.IsSuccessful)
@@ -361,8 +370,8 @@
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public async Task<BasicResponse> MatchOneToOneAsync(int userId, byte[] template, CancellationToken ct = default)
         {
-            if (userId < 0 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
+            if (userId < 0 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
             return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.VerifyTemplate, userId, template), ct);
         }
@@ -465,8 +474,8 @@
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<TemplateResponse> GetTemplateAsync(int userId, CancellationToken ct = default)
         {
-            if (userId < 0 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
+            if (userId < 0 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
             return GetResponseAsync<TemplateResponse>(Command.Create(CommandCode.GetTemplate, userId), ct);
         }
@@ -483,8 +492,8 @@
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
         public Task<BasicResponse> SetTemplateAsync(int userId, byte[] template, CancellationToken ct = default)
         {
-            if (userId < 0 || userId > FingerprintCapacity)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {FingerprintCapacity}.");
+            if (userId < 0 || userId > MaxValidId)
+                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
             return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.SetTemplate, userId, template), ct);
         }
