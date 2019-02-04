@@ -913,6 +913,19 @@ references:
   isSpec: "True"
   fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MatchOneToOneAsync
   nameWithType: FingerprintReader.MatchOneToOneAsync
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId
+  name: MaxValidId
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MaxValidId
+  commentId: P:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId
+  nameWithType: FingerprintReader.MaxValidId
+- uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId*
+  name: MaxValidId
+  href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_MaxValidId_
+  commentId: Overload:Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId
+  isSpec: "True"
+  fullName: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.MaxValidId
+  nameWithType: FingerprintReader.MaxValidId
 - uid: Unosquare.Sparkfun.FingerprintModule.FingerprintReader.OpenAsync(System.String,System.Threading.CancellationToken)
   name: OpenAsync(String, CancellationToken)
   href: api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html#Unosquare_Sparkfun_FingerprintModule_FingerprintReader_OpenAsync_System_String_System_Threading_CancellationToken_
