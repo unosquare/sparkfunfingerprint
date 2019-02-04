@@ -2,9 +2,15 @@ namespace Unosquare.Sparkfun.Playground
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Threading.Tasks;
     using FingerprintModule;
     using Swan;
+#if NET461
+    using System.Drawing;
+    using System.Drawing.Imaging;
+    using System.Runtime.InteropServices;
+#endif
 
     public class Program
     {
@@ -15,7 +21,9 @@ namespace Unosquare.Sparkfun.Playground
             // Module Control Items
             {ConsoleKey.C, "Count enrolled users"},
             {ConsoleKey.M, "Match 1:N"},
-            {ConsoleKey.S, "Enter standby mode"},
+            {ConsoleKey.I, "Get Image"},
+            {ConsoleKey.R, "Get Raw Image"},
+            {ConsoleKey.S, "Enter Standby Mode"},
         };
 
         public static async Task Main(string[] args) 
@@ -64,6 +72,50 @@ namespace Unosquare.Sparkfun.Playground
                             $"Error: {ex.Message}".Error();
                         }
                     }
+                    else if (option.Key == ConsoleKey.I)
+                    {
+                        try
+                        {
+                            var imageResponse = await reader.GetImageAsync();
+                            if (imageResponse.IsSuccessful)
+                            {
+                                $"Image size: {imageResponse.Image.Length}bytes".Info();
+#if NET461
+                                SaveImage(imageResponse.Image, 202, 258, "Image.bmp");
+#endif
+                            }
+                            else
+                            {
+                                $"Error: {imageResponse.ErrorCode}".Error();
+                            }
+                        }
+                        catch (OperationCanceledException ex)
+                        {
+                            $"Error: {ex.Message}".Error();
+                        }
+                    }
+                    else if (option.Key == ConsoleKey.R)
+                    {
+                        try
+                        {
+                            var imageResponse = await reader.GetRawImageAsync();
+                            if (imageResponse.IsSuccessful)
+                            {
+                                $"Image size: {imageResponse.Image.Length}bytes".Info();
+#if NET461
+                                SaveImage(imageResponse.Image, 160, 120, "RawImage.bmp");
+#endif
+                            }
+                            else
+                            {
+                                $"Error: {imageResponse.ErrorCode}".Error();
+                            }
+                        }
+                        catch (OperationCanceledException ex)
+                        {
+                            $"Error: {ex.Message}".Error();
+                        }
+                    }
                     else if (option.Key == ConsoleKey.S)
                     {
                         var standbyResponse = await reader.EnterStandByMode();
@@ -89,5 +141,34 @@ namespace Unosquare.Sparkfun.Playground
                 Console.ReadLine();
             }
         }
+
+#if NET461
+        private static void SaveImage(byte[] image, int width, int height, string fileName)
+        {
+            var newData = new byte[image.Length * 4];
+
+            for (int x = 0; x < image.Length; x++)
+            {
+                newData[x * 4] = image[x];
+                newData[(x * 4) + 1] = image[x];
+                newData[(x * 4) + 2] = image[x];
+                newData[(x * 4) + 3] = image[x];
+            }
+
+            using (var bmp = new Bitmap(width, height, PixelFormat.Format32bppRgb))
+            {
+                BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height),
+                                                  ImageLockMode.WriteOnly,
+                                                  bmp.PixelFormat);
+
+                var pnative = bmpData.Scan0;
+                Marshal.Copy(newData, 0, pnative, newData.Length);
+
+                bmp.UnlockBits(bmpData);
+
+                bmp.Save(fileName);
+            }
+        }
+#endif
     }
 }

@@ -21,7 +21,9 @@
 
         private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(1);
         private static readonly TimeSpan FingerActionTimeout = TimeSpan.FromSeconds(2);
+        private static readonly TimeSpan GetRawImageTimeout = TimeSpan.FromSeconds(3);
         private static readonly TimeSpan EnrollTimeout = TimeSpan.FromSeconds(5);
+        private static readonly TimeSpan GetImageTimeout = TimeSpan.FromSeconds(7);
 
         private ISerialPort _serialPort;
         private ManualResetEventSlim _serialPortDone = new ManualResetEventSlim(true);
@@ -433,7 +435,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetFingerprintImageResponse>(Command.Create(CommandCode.GetImage), ct);
+            return await GetResponseAsync<GetFingerprintImageResponse>(Command.Create(CommandCode.GetImage), GetImageTimeout, ct);
         }
 
         /// <summary>
@@ -449,7 +451,7 @@
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetRawImageResponse>(Command.Create(CommandCode.GetRawImage), ct);
+            return await GetResponseAsync<GetRawImageResponse>(Command.Create(CommandCode.GetRawImage), GetRawImageTimeout, ct);
         }
 
         /// <summary>
@@ -795,7 +797,7 @@
                 throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
 
             var data = new List<byte>();
-            var read = new byte[1024];
+            var read = new byte[1024 * 4];
             var startTime = DateTime.Now;
 
             while (data.Count < expectedResponseLength || _serialPort.BytesToRead > 0)
