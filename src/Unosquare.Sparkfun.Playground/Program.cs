@@ -2,7 +2,6 @@ namespace Unosquare.Sparkfun.Playground
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Threading.Tasks;
     using FingerprintModule;
     using Swan;
