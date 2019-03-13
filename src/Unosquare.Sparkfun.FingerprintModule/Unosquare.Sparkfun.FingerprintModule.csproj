@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Copyright>Copyright (c) 2018 - Unosquare</Copyright>
+    <Copyright>Copyright (c) 2019 - Unosquare</Copyright>
     <Company>Unosquare</Company>
     <Authors>Unosquare</Authors>
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
@@ -8,7 +8,7 @@
     <CodeAnalysisRuleSet>..\..\StyleCop.Analyzers.ruleset</CodeAnalysisRuleSet>
     <AssemblyName>Unosquare.Sparkfun.FingerprintModule</AssemblyName>
     <RootNamespace>Unosquare.Sparkfun.FingerprintModule</RootNamespace>
-    <LangVersion>7.2</LangVersion>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <EmbeddedResource Include="Resources\libnserial.so.1.temp" />

@@ -12,7 +12,7 @@
         /// Computes the checksum of the given payload.
         /// </summary>
         /// <param name="payload">The payload.</param>
-        /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
+        /// <returns>A <see cref="ushort"/> value representing the computed CRC.</returns>
         /// <exception cref="ArgumentException">payload.</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload)
         {
@@ -28,7 +28,7 @@
         /// <param name="payload">The payload.</param>
         /// <param name="startIndex">The start index.</param>
         /// <param name="endIndex">The end index.</param>
-        /// <returns>A <see cref="UInt16"/> value representing the computed CRC.</returns>
+        /// <returns>A <see cref="ushort"/> value representing the computed CRC.</returns>
         /// <exception cref="ArgumentException">payload.</exception>
         internal static ushort ComputeChecksum(this IList<byte> payload, int startIndex, int endIndex)
         {
@@ -82,9 +82,9 @@
         }
 
         /// <summary>
-        /// Converts an <see cref="UInt16"/> value to a little endian byte array.
+        /// Converts an <see cref="ushort"/> value to a little endian byte array.
         /// </summary>
-        /// <param name="value">The <see cref="UInt16"/> value.</param>
+        /// <param name="value">The <see cref="ushort"/> value.</param>
         /// <returns>A little endian byte array with the converted value.</returns>
         internal static byte[] ToLittleEndianArray(this ushort value)
         {
@@ -96,11 +96,11 @@
         }
 
         /// <summary>
-        /// Converts a little endian array to an <see cref="UInt16"/>.
+        /// Converts a little endian array to an <see cref="ushort"/>.
         /// </summary>
         /// <param name="data">The byte array.</param>
         /// <param name="startIndex">The start index.</param>
-        /// <returns>An <see cref="UInt16"/> with the converted value.</returns>
+        /// <returns>An <see cref="ushort"/> with the converted value.</returns>
         internal static ushort LittleEndianArrayToUInt16(this byte[] data, int startIndex)
         {
             var result = new byte[2];

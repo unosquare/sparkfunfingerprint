@@ -37,7 +37,7 @@
         /// <remarks>The model determines the device capacity.</remarks>
         public FingerprintReader(FingerprintReaderModel model)
         {
-            FingerprintCapacity = (int)model;
+            FingerprintCapacity = (int) model;
             MaxValidId = FingerprintCapacity - 1;
         }
 
@@ -86,7 +86,7 @@
 #if NET452
                 MsSerialPort.GetPortNames();
 #else
-                RjcpSerialPort.GetPortNames();
+            RjcpSerialPort.GetPortNames();
 #endif
 
         /// <summary>
@@ -140,10 +140,10 @@
             try
             {
                 _deviceInfo = null;
-                await TurnLedOffAsync(ct);
-                await CloseDeviceAsync(ct);
+                await TurnLedOffAsync(ct).ConfigureAwait(false);
+                await CloseDeviceAsync(ct).ConfigureAwait(false);
                 _serialPort.Close();
-                await Task.Delay(100, ct);
+                await Task.Delay(100, ct).ConfigureAwait(false);
             }
             finally
             {
@@ -151,6 +151,7 @@
                 _serialPort = null;
             }
         }
+
         #endregion
 
         #region Commands
@@ -163,13 +164,8 @@
         /// <returns>A task that represents the asynchronous set led status operation.
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
-        public Task<BasicResponse> SetLetStatusAsync(LedStatus status, CancellationToken ct = default)
-        {
-            if (status == LedStatus.On)
-                return TurnLedOnAsync(ct);
-            else
-                return TurnLedOffAsync(ct);
-        }
+        public Task<BasicResponse> SetLetStatusAsync(LedStatus status, CancellationToken ct = default) =>
+            status == LedStatus.On ? TurnLedOnAsync(ct) : TurnLedOffAsync(ct);
 
         /// <summary>
         /// Turns the led on asynchronous.
@@ -195,7 +191,7 @@
         /// Fasts device searching asynchronous.
         /// </summary>
         /// <param name="ct">An instance of <see cref="CancellationToken"/>.</param>
-        /// <returns>A task that represents the asynchronous set fast device searching goperation.
+        /// <returns>A task that represents the asynchronous set fast device searching operation.
         /// The result of the task contains an instance of <see cref="FastSearchingResponse"/>. 
         /// </returns>
         /// <remarks>The device operates as removable CD drive. If another removable CD drive exists in the system, connection time maybe will be long.
@@ -245,17 +241,21 @@
                 throw new ArgumentOutOfRangeException($"{nameof(iteration)} must be a number between 1 and 3");
 
             if (userId < -1 || userId > MaxValidId)
-                throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between -1 and {MaxValidId}.");
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(userId)} must be a number between -1 and {MaxValidId}.");
 
             if (iteration == 1)
             {
                 // Start enrollment
-                var startResult = await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.EnrollStart, userId), ct);
+                var startResult =
+                    await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.EnrollStart, userId), ct)
+                        .ConfigureAwait(false);
+
                 if (!startResult.IsSuccessful)
                     return ResponseBase.GetUnsuccessfulResponse<EnrollmentResponse>(startResult.ErrorCode);
             }
 
-            return await EnrollAsync(iteration, userId, ct);
+            return await EnrollAsync(iteration, userId, ct).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -280,12 +280,14 @@
         /// The result of the task contains a <see cref="bool"/> indicating if the action was performed.
         /// <c>true</c> if the action was performed; otherwise, <c>false</c>.
         /// </returns>
-        public async Task<bool> WaitFingerActionAsync(FingerAction action, TimeSpan timeout, CancellationToken ct = default)
+        public async Task<bool> WaitFingerActionAsync(FingerAction action, TimeSpan timeout,
+            CancellationToken ct = default)
         {
             var startTime = DateTime.Now;
             while (true)
             {
-                var result = await CheckFingerPressingStatusAsync(ct);
+                var result = await CheckFingerPressingStatusAsync(ct).ConfigureAwait(false);
+
                 if (!result.IsSuccessful)
                     return false;
 
@@ -368,12 +370,12 @@
         /// The result of the task contains an instance of <see cref="BasicResponse"/>. 
         /// </returns>
         /// <exception cref="ArgumentOutOfRangeException">userId.</exception>
-        public async Task<BasicResponse> MatchOneToOneAsync(int userId, byte[] template, CancellationToken ct = default)
+        public Task<BasicResponse> MatchOneToOneAsync(int userId, byte[] template, CancellationToken ct = default)
         {
             if (userId < 0 || userId > MaxValidId)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
-            return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.VerifyTemplate, userId, template), ct);
+            return GetResponseAsync<BasicResponse>(Command.Create(CommandCode.VerifyTemplate, userId, template), ct);
         }
 
         /// <summary>
@@ -385,11 +387,12 @@
         /// </returns>
         public async Task<MatchOneToNResponse> MatchOneToN(CancellationToken ct = default)
         {
-            var captureResult = await CaptureFingerprintPatternAsync<MatchOneToNResponse>(ct);
+            var captureResult = await CaptureFingerprintPatternAsync<MatchOneToNResponse>(ct).ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.Identify), ct);
+            return await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.Identify), ct)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -400,8 +403,8 @@
         /// <returns>A task that represents the asynchronous match one to n operation.
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse" />.
         /// </returns>
-        public async Task<MatchOneToNResponse> MatchOneToN(byte[] template, CancellationToken ct = default) =>
-            await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate, 0, template), ct);
+        public Task<MatchOneToNResponse> MatchOneToN(byte[] template, CancellationToken ct = default) =>
+            GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate, 0, template), ct);
 
         /// <summary>
         /// Match 1:N asynchronous. Identifies the user id whom a provided fingerprint template belongs to.
@@ -412,8 +415,8 @@
         /// The result of the task contains an instance of <see cref="MatchOneToNResponse" />.
         /// </returns>
         /// <remarks><see cref="MatchOneToN2"/> uses a special fingerprint template with 2 extra bytes at the beginning of the byte array.</remarks>
-        public async Task<MatchOneToNResponse> MatchOneToN2(byte[] template, CancellationToken ct = default) =>
-            await GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate2, 500, template), ct);
+        public Task<MatchOneToNResponse> MatchOneToN2(byte[] template, CancellationToken ct = default) =>
+            GetResponseAsync<MatchOneToNResponse>(Command.Create(CommandCode.IdentifyTemplate2, 500, template), ct);
 
         /// <summary>
         /// Makes a fingerprint template asynchronous. This template must be used only for transmission and not for user enrollment.
@@ -424,11 +427,12 @@
         /// </returns>
         public async Task<TemplateResponse> MakeTemplateAsync(CancellationToken ct = default)
         {
-            var captureResult = await CaptureFingerprintPatternAsync<TemplateResponse>(ct);
+            var captureResult = await CaptureFingerprintPatternAsync<TemplateResponse>(ct).ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<TemplateResponse>(Command.Create(CommandCode.MakeTemplate), ct);
+            return await GetResponseAsync<TemplateResponse>(Command.Create(CommandCode.MakeTemplate), ct)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -440,11 +444,13 @@
         /// </returns>
         public async Task<GetFingerprintImageResponse> GetImageAsync(CancellationToken ct = default)
         {
-            var captureResult = await CaptureFingerprintPatternAsync<GetFingerprintImageResponse>(ct);
+            var captureResult =
+                await CaptureFingerprintPatternAsync<GetFingerprintImageResponse>(ct).ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetFingerprintImageResponse>(Command.Create(CommandCode.GetImage), GetImageTimeout, ct);
+            return await GetResponseAsync<GetFingerprintImageResponse>(Command.Create(CommandCode.GetImage),
+                GetImageTimeout, ct).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -456,11 +462,12 @@
         /// </returns>
         public async Task<GetRawImageResponse> GetRawImageAsync(CancellationToken ct = default)
         {
-            var captureResult = await CaptureFingerprintPatternAsync<GetRawImageResponse>(ct);
+            var captureResult = await CaptureFingerprintPatternAsync<GetRawImageResponse>(ct).ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<GetRawImageResponse>(Command.Create(CommandCode.GetRawImage), GetRawImageTimeout, ct);
+            return await GetResponseAsync<GetRawImageResponse>(Command.Create(CommandCode.GetRawImage),
+                GetRawImageTimeout, ct).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -563,15 +570,15 @@
             if (!skipBaudRate && baudRate != TargetBaudRate)
             {
                 // Change baud rate to target baud rate for better performance
-                await SetBaudRateAsync(TargetBaudRate, ct);
+                await SetBaudRateAsync(TargetBaudRate, ct).ConfigureAwait(false);
             }
             else
             {
-                _deviceInfo = await OpenDeviceAsync(ct);
+                _deviceInfo = await OpenDeviceAsync(ct).ConfigureAwait(false);
                 if (!_deviceInfo.IsSuccessful)
                     throw new Exception("The device could not be initialized.");
 
-                await TurnLedOnAsync(ct);
+                await TurnLedOnAsync(ct).ConfigureAwait(false);
             }
         }
 
@@ -607,7 +614,8 @@
         private async Task<BasicResponse> SetBaudRateAsync(int baudRate, CancellationToken ct)
         {
             var response =
-                await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudRate), ct);
+                await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.ChangeBaudRate, baudRate), ct)
+                    .ConfigureAwait(false);
 
             // It is possible that we don't have a response when changing baud rate 
             // because we are still listening with the previous config. 
@@ -615,7 +623,7 @@
             if (response.IsSuccessful || response.ErrorCode == ErrorCode.CommErr)
             {
                 var portName = _serialPort.PortName;
-                await CloseAsync(ct);
+                await CloseAsync(ct).ConfigureAwait(false);
                 await OpenAsync(
 #if NET452
                 new MsSerialPort(portName, baudRate),
@@ -624,7 +632,7 @@
 #endif
                     baudRate,
                     false,
-                    ct);
+                    ct).ConfigureAwait(false);
             }
 
             return response;
@@ -643,15 +651,18 @@
         {
             var enrollmentFingerActionTimeOut = TimeSpan.FromSeconds(10);
 
-            var captureResult = await CaptureFingerprintPatternAsync<EnrollmentResponse>(enrollmentFingerActionTimeOut, ct);
+            var captureResult =
+                await CaptureFingerprintPatternAsync<EnrollmentResponse>(enrollmentFingerActionTimeOut, ct)
+                    .ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
             var cmd = iteration == 1 ? CommandCode.Enroll1 :
-                      iteration == 2 ? CommandCode.Enroll2 :
-                      CommandCode.Enroll3;
+                iteration == 2 ? CommandCode.Enroll2 :
+                CommandCode.Enroll3;
 
-            return await GetResponseAsync<EnrollmentResponse>(Command.Create(cmd, userId), EnrollTimeout, ct);
+            return await GetResponseAsync<EnrollmentResponse>(Command.Create(cmd, userId), EnrollTimeout, ct)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -677,12 +688,13 @@
         private async Task<T> CaptureFingerprintPatternAsync<T>(TimeSpan fingerActionTimeout, CancellationToken ct)
             where T : ResponseBase
         {
-            var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout, ct);
+            var actionPerformed = await WaitFingerActionAsync(FingerAction.Place, fingerActionTimeout, ct)
+                .ConfigureAwait(false);
 
             if (!actionPerformed)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.FingerNotPressed);
 
-            var captureResult = await CaptureFingerprintAsync(ct);
+            var captureResult = await CaptureFingerprintAsync(ct).ConfigureAwait(false);
 
             return typeof(T) == captureResult.GetType()
                 ? captureResult as T
@@ -726,7 +738,7 @@
         /// The result of the task contains an instance of a response type T.
         /// </returns>
         private async Task<T> GetResponseAsync<T>(Command command, TimeSpan responseTimeout, CancellationToken ct)
-                    where T : ResponseBase
+            where T : ResponseBase
         {
             var expectedResponseLength = PacketBase.BasePacketLength;
             if (ResponseBase.ResponseDataLength.ContainsKey(command.CommandCode))
@@ -743,10 +755,14 @@
             _serialPortDone.Reset();
             try
             {
-                var responsePkt = await GetInternalResponseAsync<T>(command.Payload, expectedResponseLength, responseTimeout, ct);
+                var responsePkt =
+                    await GetInternalResponseAsync<T>(command.Payload, expectedResponseLength, responseTimeout, ct)
+                        .ConfigureAwait(false);
                 if (command.HasDataPacket && responsePkt?.IsSuccessful == true)
                 {
-                    responsePkt = await GetInternalResponseAsync<T>(command.DataPacket.Payload, expectedResponseLength, responseTimeout, ct);
+                    responsePkt =
+                        await GetInternalResponseAsync<T>(command.DataPacket.Payload, expectedResponseLength,
+                            responseTimeout, ct).ConfigureAwait(false);
                 }
 
                 return responsePkt;
@@ -767,10 +783,11 @@
         /// <param name="ct">The ct.</param>
         /// <returns>A task that represents the asynchronous get response operation.
         /// The result of the task contains an instance of a response type T.</returns>
-        private async Task<T> GetInternalResponseAsync<T>(byte[] payload, int expectedResponseLength, TimeSpan responseTimeout, CancellationToken ct)
-                            where T : ResponseBase
+        private async Task<T> GetInternalResponseAsync<T>(byte[] payload, int expectedResponseLength,
+            TimeSpan responseTimeout, CancellationToken ct)
+            where T : ResponseBase
         {
-            await WriteAsync(payload, ct);
+            await WriteAsync(payload, ct).ConfigureAwait(false);
             var response = await ReadAsync(expectedResponseLength, responseTimeout, CancellationToken.None);
             if (response == null || response.Length == 0)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
@@ -787,10 +804,11 @@
         private async Task WriteAsync(byte[] payload, CancellationToken ct)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
-                throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
+                throw new InvalidOperationException(
+                    $"Call the {nameof(OpenAsync)} method before attempting communication");
 
-            await _serialPort.WriteAsync(payload, 0, payload.Length, ct);
-            await _serialPort.FlushAsync(ct);
+            await _serialPort.WriteAsync(payload, 0, payload.Length, ct).ConfigureAwait(false);
+            await _serialPort.FlushAsync(ct).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -803,7 +821,8 @@
         private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
-                throw new InvalidOperationException($"Call the {nameof(OpenAsync)} method before attempting communication");
+                throw new InvalidOperationException(
+                    $"Call the {nameof(OpenAsync)} method before attempting communication");
 
             var data = new List<byte>();
             var read = new byte[1024 * 4];
@@ -813,7 +832,7 @@
             {
                 if (_serialPort.BytesToRead > 0)
                 {
-                    var bytesRead = await _serialPort.ReadAsync(read, 0, read.Length, ct);
+                    var bytesRead = await _serialPort.ReadAsync(read, 0, read.Length, ct).ConfigureAwait(false);
                     if (bytesRead > 0)
                         data.AddRange(read.Take(bytesRead));
                 }
@@ -821,7 +840,7 @@
                 if (DateTime.Now.Subtract(startTime) > timeout)
                     return null;
 
-                await Task.Delay(10, ct);
+                await Task.Delay(10, ct).ConfigureAwait(false);
             }
 
             return data.ToArray();
