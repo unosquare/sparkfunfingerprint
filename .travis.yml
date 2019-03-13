@@ -1,7 +1,7 @@
 language: csharp
 solution: Unosquare.Sparkfun.FingerprintScanner.sln
-dotnet: 2.0.0
-dist: trusty
+dotnet: 2.2.101
+dist: xenial
 notifications:
   slack: unolabs:cbusXPH6pBwZ35rVDzi4k4ve
 install:
