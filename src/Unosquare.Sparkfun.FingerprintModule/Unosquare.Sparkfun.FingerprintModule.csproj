@@ -14,12 +14,16 @@
     <EmbeddedResource Include="Resources\libnserial.so.1.temp" />
   </ItemGroup>
   <ItemGroup> 
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference> 
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta009">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="SerialPortStream" Version="2.1.4" />
+    <PackageReference Include="SerialPortStream" Version="2.2.0" />
   </ItemGroup>
 </Project>

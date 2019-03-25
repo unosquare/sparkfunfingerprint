@@ -13,7 +13,7 @@
     /// Reference: https://cdn.sparkfun.com/assets/learn_tutorials/7/2/3/GT-521F52_Programming_guide_V10_20161001.pdf
     /// WIKI: https://learn.sparkfun.com/tutorials/fingerprint-scanner-gt-521fxx-hookup-guide.
     /// </summary>
-    /// <seealso cref="T:System.IDisposable" />
+    /// <seealso cref="System.IDisposable" />
     public class FingerprintReader : IDisposable
     {
         private const int InitialBaudRate = 9600;
@@ -280,7 +280,9 @@
         /// The result of the task contains a <see cref="bool"/> indicating if the action was performed.
         /// <c>true</c> if the action was performed; otherwise, <c>false</c>.
         /// </returns>
-        public async Task<bool> WaitFingerActionAsync(FingerAction action, TimeSpan timeout,
+        public async Task<bool> WaitFingerActionAsync(
+            FingerAction action,
+            TimeSpan timeout,
             CancellationToken ct = default)
         {
             var startTime = DateTime.Now;
@@ -298,7 +300,7 @@
                 if (DateTime.Now.Subtract(startTime) > timeout)
                     return false;
 
-                await Task.Delay(10, ct);
+                await Task.Delay(10, ct).ConfigureAwait(false);
             }
         }
 
@@ -353,11 +355,12 @@
             if (userId < 0 || userId > MaxValidId)
                 throw new ArgumentOutOfRangeException($"{nameof(userId)} must be a number between 0 and {MaxValidId}.");
 
-            var captureResult = await CaptureFingerprintPatternAsync<BasicResponse>(ct);
+            var captureResult = await CaptureFingerprintPatternAsync<BasicResponse>(ct).ConfigureAwait(false);
             if (!captureResult.IsSuccessful)
                 return captureResult;
 
-            return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.Verify, userId), ct);
+            return await GetResponseAsync<BasicResponse>(Command.Create(CommandCode.Verify, userId), ct)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -565,7 +568,7 @@
             _serialPort = serialPort;
 
             _serialPort.Open();
-            await Task.Delay(100, ct);
+            await Task.Delay(100, ct).ConfigureAwait(false);
 
             if (!skipBaudRate && baudRate != TargetBaudRate)
             {
@@ -626,7 +629,7 @@
                 await CloseAsync(ct).ConfigureAwait(false);
                 await OpenAsync(
 #if NET452
-                new MsSerialPort(portName, baudRate),
+                    new MsSerialPort(portName, baudRate),
 #else
                     new RjcpSerialPort(portName, baudRate),
 #endif
@@ -783,12 +786,16 @@
         /// <param name="ct">The ct.</param>
         /// <returns>A task that represents the asynchronous get response operation.
         /// The result of the task contains an instance of a response type T.</returns>
-        private async Task<T> GetInternalResponseAsync<T>(byte[] payload, int expectedResponseLength,
-            TimeSpan responseTimeout, CancellationToken ct)
+        private async Task<T> GetInternalResponseAsync<T>(
+            byte[] payload, 
+            int expectedResponseLength,
+            TimeSpan responseTimeout, 
+            CancellationToken ct)
             where T : ResponseBase
         {
             await WriteAsync(payload, ct).ConfigureAwait(false);
-            var response = await ReadAsync(expectedResponseLength, responseTimeout, CancellationToken.None);
+            var response = await ReadAsync(expectedResponseLength, responseTimeout, CancellationToken.None)
+                .ConfigureAwait(false);
             if (response == null || response.Length == 0)
                 return ResponseBase.GetUnsuccessfulResponse<T>(ErrorCode.CommErr);
 
@@ -804,8 +811,10 @@
         private async Task WriteAsync(byte[] payload, CancellationToken ct)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
+            {
                 throw new InvalidOperationException(
                     $"Call the {nameof(OpenAsync)} method before attempting communication");
+            }
 
             await _serialPort.WriteAsync(payload, 0, payload.Length, ct).ConfigureAwait(false);
             await _serialPort.FlushAsync(ct).ConfigureAwait(false);
@@ -821,8 +830,10 @@
         private async Task<byte[]> ReadAsync(int expectedResponseLength, TimeSpan timeout, CancellationToken ct)
         {
             if (_serialPort == null || _serialPort.IsOpen == false)
+            {
                 throw new InvalidOperationException(
                     $"Call the {nameof(OpenAsync)} method before attempting communication");
+            }
 
             var data = new List<byte>();
             var read = new byte[1024 * 4];

@@ -34,7 +34,7 @@
         /// <summary>
         /// Non-acknowledge
         /// </summary>
-        Nack = 0x31
+        Nack = 0x31,
     }
 
     /// <summary>

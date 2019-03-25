@@ -8,7 +8,7 @@
     /// <summary>
     /// Interface to wrap any Serial Port implementation.
     /// </summary>
-    /// <seealso cref="T:System.IDisposable" />
+    /// <seealso cref="System.IDisposable" />
     public interface ISerialPort : IDisposable
     {
         /// <summary>

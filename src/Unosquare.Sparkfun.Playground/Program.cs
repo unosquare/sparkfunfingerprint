@@ -11,7 +11,7 @@ namespace Unosquare.Sparkfun.Playground
     using System.Runtime.InteropServices;
 #endif
 
-    public class Program
+    public static class Program
     {
         private const int InitialBaudRate = 9600;
 
@@ -40,7 +40,7 @@ namespace Unosquare.Sparkfun.Playground
                 var reader = new FingerprintReader(FingerprintReaderModel.GT521F52);
 
                 $"Opening port at {InitialBaudRate}...".Info();
-                await reader.OpenAsync("COM4");
+                await reader.OpenAsync("COM4").ConfigureAwait(false);
 
                 $"Serial Number: {reader.SerialNumber}".Info();
                 $"Firmware Version: {reader.FirmwareVersion}".Info();
@@ -50,7 +50,7 @@ namespace Unosquare.Sparkfun.Playground
                     var option = "Select an option".ReadPrompt(Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
-                        var countResponse = await reader.CountEnrolledFingerprintAsync();
+                        var countResponse = await reader.CountEnrolledFingerprintAsync().ConfigureAwait(false);
 
                         if (countResponse.IsSuccessful)
                             $"Users enrolled: {countResponse.EnrolledFingerprints}".Info();
@@ -59,7 +59,7 @@ namespace Unosquare.Sparkfun.Playground
                     {
                         try
                         {
-                            var matchResponse = await reader.MatchOneToN();
+                            var matchResponse = await reader.MatchOneToN().ConfigureAwait(false);
 
                             if (matchResponse.IsSuccessful)
                                 $"UserId: {matchResponse.UserId}".Info();
@@ -75,7 +75,7 @@ namespace Unosquare.Sparkfun.Playground
                     {
                         try
                         {
-                            var imageResponse = await reader.GetImageAsync();
+                            var imageResponse = await reader.GetImageAsync().ConfigureAwait(false);
                             if (imageResponse.IsSuccessful)
                             {
                                 $"Image size: {imageResponse.Image.Length}bytes".Info();
@@ -97,7 +97,7 @@ namespace Unosquare.Sparkfun.Playground
                     {
                         try
                         {
-                            var imageResponse = await reader.GetRawImageAsync();
+                            var imageResponse = await reader.GetRawImageAsync().ConfigureAwait(false);
                             if (imageResponse.IsSuccessful)
                             {
                                 $"Image size: {imageResponse.Image.Length}bytes".Info();
@@ -117,7 +117,7 @@ namespace Unosquare.Sparkfun.Playground
                     }
                     else if (option.Key == ConsoleKey.S)
                     {
-                        var standbyResponse = await reader.EnterStandByMode();
+                        var standbyResponse = await reader.EnterStandByMode().ConfigureAwait(false);
 
                         if (standbyResponse.IsSuccessful)
                             "Standby Mode".Info();
