@@ -1,10 +1,11 @@
 namespace Unosquare.Sparkfun.Playground
 {
     using System;
+    using Swan;
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using FingerprintModule;
-    using Swan;
+    using Swan.Logging;
 #if NET461
     using System.Drawing;
     using System.Drawing.Imaging;
@@ -47,7 +48,7 @@ namespace Unosquare.Sparkfun.Playground
 
                 while (true)
                 {
-                    var option = "Select an option".ReadPrompt(Options, "Esc to quit");
+                    var option = Terminal.ReadPrompt("Select an option", Options, "Esc to quit");
                     if (option.Key == ConsoleKey.C)
                     {
                         var countResponse = await reader.CountEnrolledFingerprintAsync().ConfigureAwait(false);
