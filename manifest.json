@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "b7371OpQY6/JD8Lvb1Y3aQ=="
+          "hash": "DohXcCsDoPgyjjEzSPaxcA=="
         }
       },
       "is_incremental": false,
@@ -85,7 +85,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.BasicResponse.html",
-          "hash": "BPLZENIQC0oeNA4Y2QPlag=="
+          "hash": "y7fcRAKb1oHdskdnkeLQXg=="
         }
       },
       "is_incremental": false,
@@ -97,7 +97,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CheckEnrollmentResponse.html",
-          "hash": "w6hotdug4kGVPsTE4cfC3w=="
+          "hash": "s7xptpOHX9yvSsAiVMy67g=="
         }
       },
       "is_incremental": false,
@@ -109,7 +109,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CheckFingerPressingResponse.html",
-          "hash": "NzRsGKqq5taRkRLUq305uQ=="
+          "hash": "G3o1FzTJtD5RLfbc7+gL9g=="
         }
       },
       "is_incremental": false,
@@ -121,7 +121,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Command.html",
-          "hash": "dPHQenQL68JcYVM9PoY80w=="
+          "hash": "UQgobWlr4gMifQnnbINChg=="
         }
       },
       "is_incremental": false,
@@ -133,7 +133,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CommandCode.html",
-          "hash": "GotUl9Nu6fVbzQo0XjWIzA=="
+          "hash": "Y9T5tzYuxN3h+4xfF/7NMw=="
         }
       },
       "is_incremental": false,
@@ -145,7 +145,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.CountEnrolledFingerprintResponse.html",
-          "hash": "Xvl6QwZmdAS237R6N/F8Bw=="
+          "hash": "EHiNhKe6+NC6mPsmvYfeMg=="
         }
       },
       "is_incremental": false,
@@ -157,7 +157,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.EnrollmentResponse.html",
-          "hash": "WIgzeI3P7BCKV7yF9VwtMg=="
+          "hash": "vDziPAxNTMpaYwhYLYCrJg=="
         }
       },
       "is_incremental": false,
@@ -169,7 +169,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ErrorCode.html",
-          "hash": "vyo20u2sxcZjPiWlyrNhYg=="
+          "hash": "erfDDm3ZEDzvJnKtAnbkHg=="
         }
       },
       "is_incremental": false,
@@ -181,7 +181,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FastSearchingResponse.html",
-          "hash": "VTV4z+Try4/Hw8HgCssvew=="
+          "hash": "/t3p0oDM4PfGDdfPaLiAww=="
         }
       },
       "is_incremental": false,
@@ -193,7 +193,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerAction.html",
-          "hash": "bnluLrWhlLpwIaaLd8xdbg=="
+          "hash": "VxmDikzCBKoiNs4ClyapHg=="
         }
       },
       "is_incremental": false,
@@ -205,7 +205,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerprintReader.html",
-          "hash": "C54RiPU32p6pTLFmRVRC5A=="
+          "hash": "w6Ny+X9ep8hyGP5I8tyGsw=="
         }
       },
       "is_incremental": false,
@@ -217,7 +217,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.FingerprintReaderModel.html",
-          "hash": "malwN3AYd5+erGesrIz6Jw=="
+          "hash": "uwBRb4EveLffGMNEaIhHEg=="
         }
       },
       "is_incremental": false,
@@ -229,7 +229,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetFingerprintImageResponse.html",
-          "hash": "ewJrPxuJa/0w5/31gEa4VA=="
+          "hash": "ws3eNlpI96MHC7RDT1o8lg=="
         }
       },
       "is_incremental": false,
@@ -241,7 +241,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetRawImageResponse.html",
-          "hash": "ta1AFoO7g8+luQ+rh52/DA=="
+          "hash": "KmtAD8og50FzOLZvCuzT/g=="
         }
       },
       "is_incremental": false,
@@ -253,7 +253,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.GetSecurityLevelResponse.html",
-          "hash": "4+UJBjrt8+OEIvQ7ZhCuBQ=="
+          "hash": "SoRDGzcIDFtStqYS9yxU7w=="
         }
       },
       "is_incremental": false,
@@ -265,7 +265,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.InitializationResponse.html",
-          "hash": "Nc57e79ArQoLEC3kAsA/dQ=="
+          "hash": "7EOXhkt6caDqVXOZTS7DKQ=="
         }
       },
       "is_incremental": false,
@@ -277,7 +277,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.LedStatus.html",
-          "hash": "y9iZCJpdiKSU4ljhp9qblQ=="
+          "hash": "Cyooe2gIITriM9OWatEgIQ=="
         }
       },
       "is_incremental": false,
@@ -289,7 +289,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.MatchOneToNResponse.html",
-          "hash": "WnfwRSolt7oq8tMVslQZ9A=="
+          "hash": "n7K0kfJVRv6qbR9YOv9B2Q=="
         }
       },
       "is_incremental": false,
@@ -301,7 +301,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.MessageBase.html",
-          "hash": "OwzNwgEFVhKn0xcjZhJ98w=="
+          "hash": "YHZNt/BhPJby8w+LZRWdtQ=="
         }
       },
       "is_incremental": false,
@@ -313,7 +313,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.PacketBase.html",
-          "hash": "hZQzWQXkjeoDzfy7o8XSuQ=="
+          "hash": "Qf8nmoEgBVPuFnW2oWQI8Q=="
         }
       },
       "is_incremental": false,
@@ -325,7 +325,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ResponseBase.html",
-          "hash": "be7V7vvChvCKMwRXZp5QuQ=="
+          "hash": "fNOlHYxXJtG3n074usYlcQ=="
         }
       },
       "is_incremental": false,
@@ -337,7 +337,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.ResponseCode.html",
-          "hash": "40S2DZCMu7HTNXjLMAXHWw=="
+          "hash": "jqudf0NAiVKTuZdV+EhVyw=="
         }
       },
       "is_incremental": false,
@@ -349,7 +349,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.SerialPort.ISerialPort.html",
-          "hash": "EiV/KWI1kLz8CFA2V/QpHQ=="
+          "hash": "/fR9gN5MQ84fhbPYrDwfSA=="
         }
       },
       "is_incremental": false,
@@ -361,7 +361,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.SerialPort.html",
-          "hash": "OqR9FxAelSVqEKtDiwIvwg=="
+          "hash": "B0KjHsFlZxS2Zbt1nQfQAA=="
         }
       },
       "is_incremental": false,
@@ -373,7 +373,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.TemplateResponse.html",
-          "hash": "4TuZhF5Tr8WZHZZHT2gkHg=="
+          "hash": "X45cpIv/iXJvQ+KKbNC5qw=="
         }
       },
       "is_incremental": false,
@@ -385,7 +385,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Utils.OperatingSystem.html",
-          "hash": "UYmyC/nu2qgGHsdeS6NZWA=="
+          "hash": "4PqfddWa6w/fmWuTpLFjrg=="
         }
       },
       "is_incremental": false,
@@ -397,7 +397,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.Utils.html",
-          "hash": "yopsDTk2CIY7DVoS/rvO9Q=="
+          "hash": "qm+0JiFR+w3os9ek0iazjA=="
         }
       },
       "is_incremental": false,
@@ -409,7 +409,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Unosquare.Sparkfun.FingerprintModule.html",
-          "hash": "F10XDK7yqqVFhY9vbMDkJQ=="
+          "hash": "Bw4SU4AyF31TjhxYJgRndQ=="
         }
       },
       "is_incremental": false,
@@ -449,6 +449,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -464,13 +471,6 @@
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
